@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js --dev",
-    "build": "node index.js"
+    "build": "node index.js",
+    "deploy": "npm run build && surge -p build -d benclinkinbeard.surge.sh"
   },
   "keywords": [],
   "author": "Ben Clinkinbeard <ben.clinkinbeard@gmail.com> (http://benclinkinbeard.com/)",

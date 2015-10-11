@@ -12,7 +12,7 @@ var collections = require('metalsmith-collections')
 var yeticss = require('yeticss')
 var slug = require('slug')
 
-metalsmith(__dirname)
+var pipeline = metalsmith(__dirname)
   .use(function drafts(files, metalsmith, done){
     for (var file in files) {
       if (file.substr(-3) === '.md') files[file].slug = slug(files[file].title, {lower: true})
@@ -46,10 +46,14 @@ metalsmith(__dirname)
     relative: false
   }))
   .use(uncss({css: ['styles.css'], output: 'styles.css'}))
-  .use(browserSync({
+
+if (process.argv[2] === '--dev') {
+  pipeline.use(browserSync({
     server: 'build',
     files: ['src/*.*', 'layouts/*.*']
   }))
-  .build(function (err) {
+}
+
+pipeline.build(function (err) {
     if (err) throw err
   })
