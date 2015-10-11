@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mocking environment variables with Browserify</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/prism.css">
+</head>
+<body>
+  <header role="banner">
+    <div class="container">
+      <h1>Mocking environment variables with Browserify</h1>
+    </div>
+  </header>
+  <div class="container">
+    <section><p>Developer veteran and TDD aficianado <a href="http://custardbelly.com/">Todd Anderson</a> recently remarked on Twitter that one of the things that keeps him using RequireJS is the ability to simulate/mock environment variables. Being the CommonJS/Browserify <del>zealot</del> fan that I am, I decided to confirm that the same could be done using my toolset of choice.</p>
+<h2 id="accessing-and-mocking-environment-variables">Accessing and mocking environment variables</h2>
+<p>The term &quot;environment variables&quot; could mean a multitude of things, but for our purposes here we mean it to refer to things like <code>window</code>, <code>navigator</code> and the like. In Browserify, since the intended environment is a browser, you can use the <code>global</code> keyword to refer to the window object. Since we want to be able to switch out the definitions for these objects, our code to reference these variables will be defined in a file called <code>env.js</code> and look like this:</p>
+<pre><code>exports.win = global;
+exports.nav = global.navigator;
+</code></pre><p>We can create another file (<code>test-env.js</code> or whatever) in which we define the mocks we&#39;d like to have available in our tests:</p>
+<pre><code>exports.win = { some: &#39;fake window&#39; };
+exports.nav = { a: &#39;fake navigator&#39; };
+</code></pre><h2 id="switching-environments">Switching environments</h2>
+<p>Now that we have two options for these variables, let&#39;s see how to transparently switch between them. For this we will utilize <a href="https://github.com/jmreidy/grunt-browserify/">grunt-browserify</a>, though the same could obviously be done using Browserify&#39;s API directly.</p>
+<pre><code>module.exports = function(grunt) {
+
+  grunt.initConfig({
+    browserify: {
+        dev: {
+            src: [&#39;entry.js&#39;],
+            dest: &#39;dist/bundle.js&#39;,
+            options: {
+                alias: [
+                    &#39;./env.js:env&#39;
+                ]
+            }
+        },
+        test: {
+            src: [&#39;entry.js&#39;],
+            dest: &#39;dist/bundle.js&#39;,
+            options: {
+                alias: [
+                    &#39;./test-env.js:env&#39;
+                ]
+            }
+        }
+    }
+  });
+
+  grunt.loadNpmTasks(&#39;grunt-browserify&#39;);
+
+  // Default task.
+  grunt.registerTask(&#39;default&#39;, [&#39;dev&#39;]);
+
+  grunt.registerTask(&#39;dev&#39;, [&#39;browserify:dev&#39;]);
+  grunt.registerTask(&#39;test&#39;, [&#39;browserify:test&#39;]);
+
+};
+</code></pre><p>Using the above <code>Gruntfile.js</code>, you can run <code>grunt dev</code> (or just <code>grunt</code>) to load the real environment variables, or you can run <code>grunt test</code> to generate a bundle that includes your mocks in their place.</p>
+<h2 id="putting-it-to-use">Putting it to use</h2>
+<p>You can now access whichever version is bundled via the <code>env</code> alias we specified in the configs.</p>
+<pre><code>var env = require(&#39;env&#39;);
+
+(function () {
+    console.log(env.win);
+    console.log(env.nav);
+})();
+</code></pre><h2 id="conclusion">Conclusion</h2>
+<p>Browserify is not a panacea, though it comes damn close IMO. One downside to this approach is that the use of aliases means you always have to bundle to run your code. While this shouldn&#39;t take more than a second or two, running unit tests directly usually takes a small fraction of a second. I&#39;ve definitely been known to sweat details like a workflow taking a couple seconds longer than I think it should, but this time I feel it&#39;s a reasonable tradeoff. I will gladly trade an extra second or two when running tests for the immeasurable benefits of using CommonJS, npm, and Browserify on my client side JavaScript projects.</p>
+</section>
+  </div>
+</body>
+</html>
