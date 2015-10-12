@@ -8,6 +8,7 @@ var browserSync = require('metalsmith-browser-sync')
 var uncss = require('metalsmith-uncss')
 var metalsmithPrism = require('metalsmith-prism')
 var collections = require('metalsmith-collections')
+var assets = require('metalsmith-static')
 
 var yeticss = require('yeticss')
 var slug = require('slug')
@@ -26,6 +27,7 @@ var pipeline = metalsmith(__dirname)
       refer: false
     }
   }))
+  .use(assets({src: 'static', dest: '.'}))
   .use(markdown({langPrefix: 'language-'}))
   .use(metalsmithPrism())
   .use(inPlace({
