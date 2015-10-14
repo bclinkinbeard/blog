@@ -4,16 +4,19 @@ var stylus = require('metalsmith-stylus')
 var layouts = require('metalsmith-layouts')
 var inPlace = require('metalsmith-in-place')
 var permalinks = require('metalsmith-permalinks')
-var browserSync = require('metalsmith-browser-sync')
 var uncss = require('metalsmith-uncss')
 var metalsmithPrism = require('metalsmith-prism')
 var collections = require('metalsmith-collections')
 var assets = require('metalsmith-static')
+var mif = require('metalsmith-if')
 
 var yeticss = require('yeticss')
 var slug = require('slug')
 
-var pipeline = metalsmith(__dirname)
+var argv = require('yargs').argv
+
+metalsmith(__dirname)
+  .clean(!argv.reload)
   .use(function drafts(files, metalsmith, done){
     for (var file in files) {
       if (file.substr(-3) === '.md') files[file].slug = slug(files[file].title, {lower: true})
@@ -27,7 +30,10 @@ var pipeline = metalsmith(__dirname)
       refer: false
     }
   }))
-  .use(assets({src: 'static', dest: '.'}))
+  .use(mif(
+    !argv.reload,
+    assets({src: 'static', dest: '.'})
+  ))
   .use(markdown({langPrefix: 'language-'}))
   .use(metalsmithPrism())
   .use(inPlace({
@@ -47,15 +53,10 @@ var pipeline = metalsmith(__dirname)
     pattern: ':collection/:title',
     relative: false
   }))
-  .use(uncss({css: ['styles.css'], output: 'styles.css'}))
-
-if (process.argv[2] === '--dev') {
-  pipeline.use(browserSync({
-    server: 'build',
-    files: ['src/*.*', 'layouts/*.*']
-  }))
-}
-
-pipeline.build(function (err) {
+  .use(mif(
+    !argv.reload,
+    uncss({css: ['styles.css'], output: 'styles.css'})
+  ))
+  .build(function (err) {
     if (err) throw err
   })
