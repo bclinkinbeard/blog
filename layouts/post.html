@@ -4,17 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{title}}</title>
-  <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/prism.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <header role="banner">
     <div class="container">
-      <h1>{{title}}</h1>
+      It's hard to keep your skills sharp. Get notified of new posts.
+      <input type="text" placeholder="level@up.com">
+      <button>Keep me posted, dawg!</button>
     </div>
   </header>
-  <div class="container">
-    <section>{{{contents}}}</section>
+  <div class="container post">
+    <h1 class="post-title">{{title}}</h1>
+    <h3 class="post-date-label">{{dateLabel}}</h3>
+    {{{contents}}}
   </div>
+  <script src="/prism.js"></script>
 </body>
 </html>

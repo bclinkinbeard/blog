@@ -26,7 +26,7 @@ At the heart of the atomify philosophy is the concept of fully self-contained, y
 
 As I mentioned before, our component is defined using the `angular.module` API. In our simple example, this is what that looks like.
 
-```
+```javascript
 var angular = require('angular');
 
 module.exports = angular.module('demo-component', [])
@@ -45,7 +45,7 @@ You'll notice that we are requiring an HTML file, which is not something you nor
 
 Our directive is super simple, but a bit different than what you're probably used to seeing. Essentially all the directive does is turn the template we've made available into a DOM element, compiles it with the scope it receives, and inserts the new node into the DOM wherever it was defined. You can see the full code below.
 
-```
+```javascript
 var angular = require('angular');
 
 module.exports = function DemoDirective ($compile, template) {
