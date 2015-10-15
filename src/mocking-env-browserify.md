@@ -12,14 +12,14 @@ Developer veteran and TDD aficianado [Todd Anderson](http://custardbelly.com/) r
 
 The term "environment variables" could mean a multitude of things, but for our purposes here we mean it to refer to things like `window`, `navigator` and the like. In Browserify, since the intended environment is a browser, you can use the `global` keyword to refer to the window object. Since we want to be able to switch out the definitions for these objects, our code to reference these variables will be defined in a file called `env.js` and look like this:
 
-```
+```javascript
 exports.win = global;
 exports.nav = global.navigator;
 ```
 
 We can create another file (`test-env.js` or whatever) in which we define the mocks we'd like to have available in our tests:
 
-```
+```javascript
 exports.win = { some: 'fake window' };
 exports.nav = { a: 'fake navigator' };
 ```
@@ -28,7 +28,7 @@ exports.nav = { a: 'fake navigator' };
 
 Now that we have two options for these variables, let's see how to transparently switch between them. For this we will utilize [grunt-browserify](https://github.com/jmreidy/grunt-browserify/), though the same could obviously be done using Browserify's API directly.
 
-```
+```javascript
 module.exports = function(grunt) {
 
   grunt.initConfig({
@@ -71,7 +71,7 @@ Using the above `Gruntfile.js`, you can run `grunt dev` (or just `grunt`) to loa
 
 You can now access whichever version is bundled via the `env` alias we specified in the configs.
 
-```
+```javascript
 var env = require('env');
 
 (function () {

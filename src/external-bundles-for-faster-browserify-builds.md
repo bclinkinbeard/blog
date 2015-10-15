@@ -24,7 +24,7 @@ So, how do you make it available, and avoid looking like a liar in front of Brow
 
 These code examples will assume you are using grun-browserify. If you are hardcore and writing your own Browserify build scripts I trust you are capable of converting them to plain JS instructions. The shim option is necessary because neither jQuery nor AngularJS provide a CommonJS compatible export, which Browserify requires.
 
-```
+```javascript
 browserify: {
   libs: {
     options: {
@@ -54,7 +54,7 @@ So what is happening here? We are creating  `libs` target for our `browserify` t
 
 Now that we've taken care of bundling the libraries our app will need, we need to tell Browserify not to bundle those same files again, and not to freak out when it sees a request for one of these files. We do this using the `external` config option.
 
-```
+```javascript
 app: {
   options: {
     alias: [

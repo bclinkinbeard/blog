@@ -13,7 +13,7 @@ Browserify uses the term entry file(s) to describe where it will start reading a
 ## The module map
 The first argument passed to the IIFE is a map, where the keys are unique numbers and the values are 2 element arrays. A very simple version of this map might look like this:
 
-```
+```javascript
 {
   1: [function (require, module, exports) {
     module.exports = 'DEP';
@@ -40,7 +40,7 @@ This is a greatly simplified example, but you can see how our dependency tree ha
 
 Now that we've seen how the different files are combined and related to one another, let's look at an individual file and how its contents are augmented. The full source of `entry.js` is simply
 
-```
+```javascript
 require('./dep');
 
 module.exports = 'ENTRY';
@@ -48,7 +48,7 @@ module.exports = 'ENTRY';
 
 but our bundle represents it as
 
-```
+```javascript
 function (require, module, exports) {
   require('./dep');
 
