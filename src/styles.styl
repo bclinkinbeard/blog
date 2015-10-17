@@ -1,5 +1,8 @@
 @import 'yeticss'
 
+$desktop-header-height = 3em
+$mobile-header-height = 6em
+
 code
   font-size: 1em
 
@@ -9,10 +12,13 @@ pre[class*="language-"]
 header
   position: fixed
   width: 100%
-  height: 3em
+  height: $desktop-header-height
   line-height: 2.8em
   background-color: rgba(200, 200, 200, 0.9)
   z-index: 1000
+
+body > .container
+    padding-top: $desktop-header-height + 1
 
 /*
   INDEX PAGE
@@ -57,10 +63,10 @@ header
 
 @media screen and (max-width: $breakpoint-desktop - 1)
   header
-    height: 6em
+    height: $mobile-header-height
 
-  .post
-    padding-top: 7em
+  body > .container
+      padding-top: $mobile-header-height + 1
 
   pre
     max-height: 30em
