@@ -6,7 +6,8 @@
   "scripts": {
     "build": "node index.js",
     "start": "npm run build && node bs.js",
-    "deploy": "npm run build && surge -p build -d benclinkinbeard.surge.sh"
+    "stage": "npm run build && surge -p build -d benclinkinbeard.surge.sh",
+    "deploy": "npm run build && surge -p build"
   },
   "keywords": [],
   "author": "Ben Clinkinbeard <ben.clinkinbeard@gmail.com> (http://benclinkinbeard.com/)",
