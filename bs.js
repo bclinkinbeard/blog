@@ -4,7 +4,7 @@ var exec = require('child_process').exec
 bs.init({
   server: 'build',
   files: [{
-    match: ['src/*', 'layouts/*'],
+    match: ['src/*', 'layouts/*', 'partials/*'],
     fn: function (event, file) {
       if (event !== 'change') return
 

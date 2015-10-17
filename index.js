@@ -35,7 +35,8 @@ metalsmith(__dirname)
   .use(layouts({
     engine: 'handlebars',
     default: 'post.html',
-    pattern: '*.html'
+    pattern: '*.html',
+    partials: 'partials'
   }))
   .use(stylus({
     compress: true,
