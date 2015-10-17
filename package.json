@@ -7,7 +7,7 @@
     "build": "node index.js",
     "start": "npm run build && node bs.js",
     "stage": "npm run build && surge -p build -d benclinkinbeard.surge.sh",
-    "deploy": "npm run build && surge -p build"
+    "deploy": "npm run build && cp CNAME build/CNAME && surge -p build"
   },
   "keywords": [],
   "author": "Ben Clinkinbeard <ben.clinkinbeard@gmail.com> (http://benclinkinbeard.com/)",
