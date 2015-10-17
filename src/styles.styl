@@ -19,12 +19,18 @@ header
   display: flex
   justify-content: center
 
+  form
+    display: flex
+    justify-content: center
+
   input
+    width: 100%
     margin: 0.5em
     margin-right: 0
     padding-left: 0.3em
 
   button
+    width: 100%
     margin: 0.5em
     line-height: 0.5em
 
@@ -37,6 +43,17 @@ body > .container
 
 #sub-btn-phone
   display: none
+
+h2
+h3
+  margin-bottom: 10px
+
+.post-title
+  margin-bottom: 5px
+
+.post-date-label
+  color: $gray
+  margin-bottom: 25px
 
 /*
   INDEX PAGE
@@ -100,9 +117,15 @@ body > .container
     max-height: 30em
 
 @media screen and (max-width: $breakpoint-smartphone - 1)
+  body > .container
+      padding-bottom: 1em
+
   header
     > span
       display: none
+
+    form
+      width: 100%
 
     input
       margin-bottom: 0
