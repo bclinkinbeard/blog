@@ -14,7 +14,7 @@ header
   width: 100%
   height: $desktop-header-height
   line-height: 2.8em
-  background-color: rgba(200, 200, 200, 0.9)
+  background-color: rgba(183, 192, 195, 0.9)
   z-index: 1000
   display: flex
   justify-content: center
@@ -35,7 +35,17 @@ header
     line-height: 0.5em
 
 body > .container
-    padding-top: $desktop-header-height + 1
+    padding-top: $desktop-header-height + 2
+
+footer
+  width: 100%
+  padding: 2em 0 1em
+  background-color: $gray-light
+  font-size: 1.25em
+
+  a
+    color: $gray-darker
+    font-weight: 500
 
 #form-container
   display: flex
@@ -75,6 +85,12 @@ h3
     font-size: 0.8em
     color: rgba(0, 0, 0, 0.6)
 
+.post-list-item:last-child
+  list-style-type: none
+  font-size: 1.4em
+  border-bottom: none
+  padding-bottom: 0
+
 /*
   POST PAGE
 */
@@ -111,7 +127,7 @@ h3
       line-height: 0.7em
 
   body > .container
-      padding-top: $mobile-header-height + 1
+      padding-top: $mobile-header-height + 2
 
   pre
     max-height: 30em
@@ -132,6 +148,11 @@ h3
 
     button
       margin: 0.25em 0
+
+  footer
+    width: 100%
+    padding: 1em 0
+    background-color: $gray-light
 
   #form-container
     width: 85%
