@@ -13,6 +13,7 @@
   "author": "Ben Clinkinbeard <ben.clinkinbeard@gmail.com> (http://benclinkinbeard.com/)",
   "license": "ISC",
   "dependencies": {
+    "autoprefixer-stylus": "^0.8.0",
     "browser-sync": "^2.9.11",
     "handlebars": "^4.0.3",
     "metalsmith": "^2.1.0",

@@ -11,6 +11,7 @@ var mif = require('metalsmith-if')
 
 var slug = require('slug')
 var yeticss = require('yeticss')
+var autoprefixer = require('autoprefixer-stylus')
 
 var argv = require('yargs').argv
 
@@ -39,7 +40,7 @@ metalsmith(__dirname)
   }))
   .use(stylus({
     compress: true,
-    use: [yeticss()]
+    use: [yeticss(), autoprefixer()]
   }))
   .use(permalinks({
     pattern: ':collection/:title',
