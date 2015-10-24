@@ -9,7 +9,7 @@
 </head>
 <body>
   {{> header}}
-  <div class="container">
+  <main role="main" class="container">
     <ol class="post-list">
   	{{#each collections.posts as |post|}}
   		<li class="post-list-item">
@@ -18,7 +18,7 @@
   		</li>
   	{{/each}}
     </ol>
-  </div>
+  </main>
   {{> footer}}
 </body>
 </html>
