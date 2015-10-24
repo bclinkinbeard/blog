@@ -17,7 +17,6 @@
     "browser-sync": "^2.9.11",
     "handlebars": "^4.0.3",
     "metalsmith": "^2.1.0",
-    "metalsmith-browser-sync": "^1.1.0",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-if": "^0.1.1",
     "metalsmith-layouts": "^1.4.1",
