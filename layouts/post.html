@@ -11,9 +11,13 @@
 <body>
   {{> header}}
   <main role="main" class="container">
-    <h1 class="post-title">{{title}}</h1>
-    <h3 class="post-date-label">{{dateLabel}}</h3>
-    {{{contents}}}
+    <article>
+      <header>
+        <h1 class="post-title">{{title}}</h1>
+        <h3 class="post-date-label">{{dateLabel}}</h3>
+      </header>
+      {{{contents}}}
+    </article>
   </main>
   {{> footer}}
   <script src="/prism.js"></script>

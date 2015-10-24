@@ -10,7 +10,7 @@ pre[class*="language-"]
 pre
   margin-bottom: 30px !important
 
-header
+header[role="banner"]
   position: fixed
   width: 100%
   height: $desktop-header-height
@@ -114,7 +114,7 @@ h3
     color: rgba(0, 0, 0, 0.6)
 
 @media screen and (max-width: $breakpoint-tablet - 1)
-  header
+  header[role="banner"]
     height: $mobile-header-height
     flex-direction: column
     align-items: center
@@ -137,7 +137,7 @@ h3
   body > .container
       padding-bottom: 1em
 
-  header
+  header[role="banner"]
     > span
       display: none
 
