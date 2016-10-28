@@ -57,6 +57,6 @@ With this updated version of our scale, `linearScale(105)` would return `500`, a
 
 Not too bad, right? There are many more scale types in D3 (and you can roll your own!) but they all follow this same basic formula. You pick a scale type, define what type of data will go in and what should come out, and in return you get a function that will convert values in the manner you specified.
 
-Once you understand these fundamental building blocks you are well on your way to being productive with D3. I've embedded an example below that defines a linear scale like we defined above. Experiment with different values in the domain and range, and see if you can anticipate the values the scale function will produce!
+Once you understand these fundamental building blocks you are well on your way to being productive with D3. I've embedded an example below that defines a linear scale like the one we created above. Experiment with different values in the domain and range, and see if you can anticipate the values the scale function will produce!
 
 <iframe width="100%" height="500px" frameborder="0" style="margin-bottom: 2em" src="https://embed.plnkr.co/github/bclinkinbeard/egghead-d3v4/02-linear-scales?show=src%2Fapp.js,preview&autoCloseSidebar=true"></iframe>
