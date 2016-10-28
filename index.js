@@ -25,7 +25,9 @@ metalsmith(__dirname)
   })
   .use(collections({
     posts: {
-      sortBy: 'date',
+      sortBy: function(a,b){
+        return new Date(a.date) - new Date(b.date);
+      },
       reverse: true,
       refer: false
     }
