@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node index.js",
+    "build": "node index.js && node index.js --reload",
     "start": "npm run build && node bs.js",
     "stage": "npm run build && surge -p build -d benclinkinbeard.surge.sh",
     "deploy": "npm run build && cp CNAME build/CNAME && surge -p build"
