@@ -8,14 +8,30 @@
 
 Learning D3 can be intimidating, but it really doesn't have to be. Once you learn it's conventions and patterns and a handful of its APIs it's actually very approachable. In an attempt to convey that, I've put together a short guide that shows how to create a basic column chart.
 
-It's not quite a cheat sheet, but it is concise and to the point, with some great links to more information should you need or want it.
+It's not quite a cheat sheet, but it is concise and to the point, with some great links to more information should you need or want it. If you want to **Build your first column chart with D3 v4** like the one below in under 10 minutes, toss your email address in the form below and I'll send it right over. Happy hacking!
 
-Click the preview to download <strong>Build your first column chart with D3 v4</strong>
-<a
-	href="/assets/column-chart.pdf"
-	onclick="mixpanel.track('Asset Download', {'title': 'Build your first column chart with D3 v4'})">
-	<img src="/assets/column-chart-preview.png" />
-</a>
+<!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="//benclinkinbeard.us3.list-manage.com/subscribe/post?u=6d07cdf61fbc0d9355e8a9a0c&amp;id=c34eca8564" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<label for="mce-EMAIL">Send me the Column Chart Quickstart!</label>
+	<input type="hidden" value="first-column-chart" name="DOC" id="mce-DOC-header">
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_6d07cdf61fbc0d9355e8a9a0c_c34eca8564" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Give it!" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+<!--End mc_embed_signup-->
+
+<img src="/assets/column-chart-preview-sm.png" />
 
 ## Want to go further?
 
