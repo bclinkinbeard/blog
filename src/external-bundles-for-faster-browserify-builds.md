@@ -22,7 +22,7 @@ Among the handful of options Browserify supports, one of them is `external`. Thi
 
 So, how do you make it available, and avoid looking like a liar in front of Browserify? Easy, you stick them in their own bundle, and only build that one when necessary.
 
-These code examples will assume you are using grun-browserify. If you are hardcore and writing your own Browserify build scripts I trust you are capable of converting them to plain JS instructions. The shim option is necessary because neither jQuery nor AngularJS provide a CommonJS compatible export, which Browserify requires.
+These code examples will assume you are using grunt-browserify. If you are hardcore and writing your own Browserify build scripts I trust you are capable of converting them to plain JS instructions. The shim option is necessary because neither jQuery nor AngularJS provide a CommonJS compatible export, which Browserify requires.
 
 ```javascript
 browserify: {
@@ -77,7 +77,7 @@ The `external` block is the important part though. That is what tells Browserify
 
 ## See it in action
 
-I have put together a very simple demo project that illustrates the concepts discussed above. To set it up on your machine, [download this zip file](http://benclinkinbeard.com/demos/external-bundles.zip) and unpack it. From the new directory run `npm install`. (I am assuming you already have the Grunt CLI installed.) You now have 2 Grunt tasks available that will demonstrate the build speed difference.
+I have put together a very simple demo project that illustrates the concepts discussed above. To set it up on your machine, [download this zip file](https://www.dropbox.com/s/4u56i2zxhtk8ync/external-bundles.zip?dl=0) and unpack it. From the new directory run `npm install`. (I am assuming you already have the Grunt CLI installed.) You now have 2 Grunt tasks available that will demonstrate the build speed difference.
 
 To see the slow, un-optimized version that does not externalize dependencies, run `grunt server-slow`. This will build everything and start the watch process. To then trigger a rebuild, edit the `app.js` file and save it. In your terminal you should see output showing the files are being rebuilt, with a message at the end telling you how long everything took. Over the course of several builds I saw times between 1.9 seconds and 2.2 seconds. YMMV, obviously.
 
