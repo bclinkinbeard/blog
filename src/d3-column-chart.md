@@ -6,13 +6,11 @@
 	collection: posts
 ---
 
-# How to build a column chart with D3 v4
-
 Column charts and their horizontal bar chart cousins are staples of every data visualization library ever created, but wouldn't you rather know how to create your own? You can learn how to build a chart like the one below in less time than it would take to find, download, and configure some pre-built ball of spaghetti code that may or may not actually meet your needs.
 
 
 
-CHART IMAGE GOES HERE
+<img src="/assets/column-chart-preview.png" />
 
 
 
@@ -136,8 +134,8 @@ Oh, and if you feel like tinkering with a real live version, [click here and hav
 
 ## Want to learn more?
 
-I thought you might say that. :smile:
+I've assembled this post and a few more like it into a guide called *D3 Quickstart: Your Guide to Awesome Visualizations*. It will show you step by step how to build column, bubble, line, and area charts. It also provides more information on some of D3's core concepts like selections and scales. 
 
-I've assembled this post and a few more like it into a guide called *D3 Quickstart: Your Guide to Awesome Visualizations*. It will show you, step by step, how to build column, bubble, line, and area charts. It also provides more information on some of D3's core concepts like selections and scales. Sound good? Drop your email address into the field below and it'll be sent to your inbox quicker than you can say Data-Driven Documents!
+Drop your email address into the field below and it'll be sent to your inbox quicker than you can say Data-Driven Documents!
 
 SEND ME THE GUIDE button
