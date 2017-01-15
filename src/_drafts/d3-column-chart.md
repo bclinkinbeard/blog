@@ -3,7 +3,7 @@
 	date: 2017-1-23
 	dateLabel: January 2017
 	description: How to build a column chart with D3 v4
-	collection: posts
+	collection: drafts
 ---
 
 Column charts and their horizontal bar chart cousins are staples of every data visualization library ever created, but wouldn't you rather know how to create your own? You can learn how to build a chart like the one below in less time than it would take to find, download, and configure some pre-built ball of spaghetti code that may or may not actually meet your needs.
