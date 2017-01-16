@@ -18,11 +18,17 @@ It's not quite a cheat sheet, but it is concise and to the point, with some grea
 	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
 <div id="mc_embed_signup">
-<form action="//benclinkinbeard.us3.list-manage.com/subscribe/post?u=6d07cdf61fbc0d9355e8a9a0c&amp;id=c34eca8564" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<form action="https://www.getdrip.com/forms/67526205/submissions" 
+	method="post" 
+	id="mc-embedded-subscribe-form" 
+	name="mc-embedded-subscribe-form" 
+	class="validate" 
+	target="_blank" 
+	novalidate
+	data-drip-embedded-form="67526205">
     <div id="mc_embed_signup_scroll">
-	<label for="mce-EMAIL">Send me the Column Chart Quickstart!</label>
-	<input type="hidden" value="first-column-chart" name="DOC" id="mce-DOC-header">
-	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+	<label for="mce-EMAIL" data-drip-attribute="headline">Send me the Column Chart Quickstart!</label>
+	<input type="email" value="" name="fields[email]" class="email" id="mce-EMAIL" placeholder="email address" required>
     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_6d07cdf61fbc0d9355e8a9a0c_c34eca8564" tabindex="-1" value=""></div>
     <div class="clear"><input type="submit" value="Give it!" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
