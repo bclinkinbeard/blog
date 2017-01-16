@@ -1,23 +1,20 @@
 var metalsmith = require('metalsmith')
 var markdown = require('metalsmith-markdown')
-var stylus = require('metalsmith-stylus')
 var layouts = require('metalsmith-layouts')
 var permalinks = require('metalsmith-permalinks')
-var uncss = require('metalsmith-uncss')
-var metalsmithPrism = require('metalsmith-prism')
+var concat = require('metalsmith-concat')
+var cleanCSS = require('metalsmith-clean-css')
 var collections = require('metalsmith-collections')
 var assets = require('metalsmith-static')
 var mif = require('metalsmith-if')
 
 var slug = require('slug')
-var yeticss = require('yeticss')
-var autoprefixer = require('autoprefixer-stylus')
 
 var argv = require('yargs').argv
 
 metalsmith(__dirname)
   .clean(!argv.reload)
-  .use(function (files, metalsmith, done){
+  .use(function (files, metalsmith, done) {
     for (var file in files) {
       if (file.substr(-3) === '.md') files[file].slug = slug(files[file].title, {lower: true})
     }
@@ -25,7 +22,7 @@ metalsmith(__dirname)
   })
   .use(collections({
     posts: {
-      sortBy: function(a,b){
+      sortBy: function (a, b) {
         return new Date(a.date) - new Date(b.date);
       },
       reverse: true,
@@ -33,28 +30,27 @@ metalsmith(__dirname)
     }
   }))
   .use(markdown({langPrefix: 'language-'}))
-  .use(metalsmithPrism())
   .use(layouts({
     engine: 'handlebars',
     default: 'post.html',
     pattern: '*.html',
     partials: 'partials'
   }))
-  .use(stylus({
-    compress: true,
-    use: [yeticss(), autoprefixer()]
-  }))
   .use(permalinks({
     pattern: ':collection/:title',
     relative: false
   }))
+  .use(concat({
+    files: 'css/**/*.css',
+    output: 'css/styles.css',
+    forceOutput: true
+  }))
+  .use(cleanCSS({
+    files: 'css/styles.css'
+  }))
   .use(mif(
     !argv.reload,
     assets({src: 'static', dest: '.'})
-  ))
-  .use(mif(
-    !argv.reload,
-    uncss({css: ['styles.css'], output: 'styles.css'})
   ))
   .build(function (err) {
     if (err) throw err

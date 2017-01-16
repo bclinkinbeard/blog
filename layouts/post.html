@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{title}}</title>
-  <link rel="stylesheet" href="/prism.css">
-  <link rel="stylesheet" href="/styles.css">
+
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/styles.css">
+
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -16,7 +18,7 @@
 <body>
   {{> header}}
   <main role="main" class="container">
-    <article>
+    <article class="row">
       <header>
         <h1 class="post-title">{{title}}</h1>
         <h3 class="post-date-label">{{dateLabel}}</h3>
@@ -25,6 +27,6 @@
     </article>
   </main>
   {{> footer}}
-  <script src="/prism.js"></script>
+  <script src="/prism.js" async></script>
 </body>
 </html>

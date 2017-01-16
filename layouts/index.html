@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{title}}</title>
-  <link rel="stylesheet" href="/styles.css">
+  
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/styles.css">
+
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -15,14 +18,10 @@
 <body>
   {{> header}}
   <main role="main" class="container">
-    <ol class="post-list">
   	{{#each collections.posts as |post|}}
-  		<li class="post-list-item">
-  			<div>{{post.dateLabel}}</div>
-  			<a href="/posts/{{post.slug}}/">{{post.title}}</a>
-  		</li>
+      <div>{{post.dateLabel}}</div>
+      <a href="/posts/{{post.slug}}/"><h2>{{post.title}}</h2></a>
   	{{/each}}
-    </ol>
   </main>
   {{> footer}}
 </body>
