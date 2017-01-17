@@ -41,7 +41,12 @@ metalsmith(__dirname)
     relative: false
   }))
   .use(concat({
-    files: 'css/**/*.css',
+    files: 'css/vendor/*.css',
+    output: 'css/styles.css',
+    forceOutput: true
+  }))
+  .use(concat({
+    files: ['css/styles.css', 'css/custom.css'],
     output: 'css/styles.css',
     forceOutput: true
   }))

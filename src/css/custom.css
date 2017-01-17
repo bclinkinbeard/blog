@@ -1,4 +1,38 @@
+main[role="main"] {
+  margin-top: 2rem;
+}
+
+h2 > a {
+  text-decoration: none;
+}
+
+h2 + h5 {
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+}
+
+h4.post-date-label {
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+  color: #AAA;
+}
+
+article h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
 pre > code {
   border: none;
   padding: 0;
+}
+
+footer {
+  width: 100%;
+  padding: 2em 0 1em;
+  background-color: #EEE;
+}
+
+footer a {
+  font-weight: 500;
 }
