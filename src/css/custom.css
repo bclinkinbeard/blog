@@ -17,9 +17,15 @@ h4.post-date-label {
   color: #AAA;
 }
 
-article h2 {
+article h2, 
+article h3, 
+article h4 {
   margin-top: 2rem;
   margin-bottom: 1rem;
+}
+
+pre[class*="language-"] {
+  margin-bottom: 2.3rem;
 }
 
 pre > code {
