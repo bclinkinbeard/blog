@@ -37,7 +37,7 @@ metalsmith(__dirname)
     partials: 'partials'
   }))
   .use(permalinks({
-    pattern: ':collection/:title',
+    pattern: ':collection/:slug',
     relative: false
   }))
   .use(concat({
