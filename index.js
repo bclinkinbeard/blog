@@ -58,5 +58,5 @@ metalsmith(__dirname)
     assets({src: 'static', dest: '.'})
   ))
   .build(function (err) {
-    if (err) throw err
+    // if (err) throw err
   })
