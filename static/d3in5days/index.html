@@ -487,6 +487,11 @@
       </div>
     </div>
   </div>
+  <script>
+    if (location.search) {
+      document.getElementById('email-address').value = location.search.substr(3);
+    }
+  </script>
 </body>
 
 </html>
