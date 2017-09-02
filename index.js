@@ -7,7 +7,7 @@ var cleanCSS = require('metalsmith-clean-css')
 var collections = require('metalsmith-collections')
 var assets = require('metalsmith-static')
 var mif = require('metalsmith-if')
-
+var redirect = require('metalsmith-redirect');
 var slug = require('slug')
 
 var argv = require('yargs').argv
@@ -52,6 +52,10 @@ metalsmith(__dirname)
   }))
   .use(cleanCSS({
     files: 'css/styles.css'
+  }))
+  .use(redirect({
+    '/': '/d3in5days',
+    '/posts/build-your-first-column-chart-with-d3-v4/': '/d3in5days',
   }))
   .use(mif(
     !argv.reload,
