@@ -498,7 +498,7 @@
     if (location.search.startsWith('?e=')) {
       document.getElementById('email-address').value = location.search.substr(3);
     }
-    if (location.search === '?confirmed') {
+    if (location.search.startsWith('?confirmed')) {
       var fc = document.getElementById('form-container');
       fc.parentNode.removeChild(fc);
     }
