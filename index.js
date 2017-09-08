@@ -38,7 +38,12 @@ metalsmith(__dirname)
   }))
   .use(permalinks({
     pattern: ':collection/:slug',
-    relative: false
+    relative: false,
+
+    linksets: [{
+      match: { collection: 'indices' },
+      pattern: 'posts'
+    }]
   }))
   .use(concat({
     files: 'css/vendor/*.css',
