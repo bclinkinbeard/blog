@@ -60,6 +60,7 @@ metalsmith(__dirname)
   }))
   .use(redirect({
     '/': '/d3in5days',
+    '/blog': '/posts',
     '/posts/build-your-first-column-chart-with-d3-v4/': '/d3in5days',
   }))
   .use(mif(
