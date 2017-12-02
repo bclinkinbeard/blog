@@ -12,511 +12,222 @@
   <meta name="twitter:image" content="https://imgur.com/meMiVpd.png" />
   <meta name="twitter:creator" content="@bclinkinbeard" />
   <title>D3 + SVG: How to Create Flawless Charts for Any Screen</title>
-  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <style>
-    body {
-      padding: 0;
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-    }
-
-    h2 {
-      color: white;
-      margin-top: 0;
-      margin-bottom: 3rem;
-    }
-
-    .landing {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: url("bg.jpg") center 0 no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
-      width: 100vw;
-      height: 100vh;
-    }
-
-    form {
-      width: 45vw;
-      display: flex;
-      align-items: baseline;
-      justify-content: center;
-    }
-
-    input[type="email"] {
-      flex: 1.25;
-      max-width: 500px;
-      margin-right: 0.3rem;
-      height: 2rem;
-      padding: 0.35rem 0.5rem 0.5rem 0.5rem;
-      font-size: 1.2rem;
-      border-radius: 6px;
-      border: none;
-    }
-
-    input[type="submit"] {
-      background-image: linear-gradient(to bottom, #5cb85c 0, #419641 100%);
-      background-repeat: repeat-x;
-      border-color: #3e8f3e;
-      color: #fff;
-      background-color: #5cb85c;
-    }
-
-    .disclaimer {
-      width: 45vw;
-      display: flex;
-      justify-content: center;
-      padding-top: 0.3rem;
-      padding-bottom: 20rem;
-      color: gray;
-    }
-  </style>
-  <style>
-    .cover {
-      background-size: cover !important;
-    }
-
-    .dt {
-      display: table;
-    }
-
-    .dtc {
-      display: table-cell;
-    }
-
-    .i {
-      font-style: italic;
-    }
-
-    .fs-normal {
-      font-style: normal;
-    }
-
-    .fw1 {
-      font-weight: 100;
-    }
-
-    .vh-100 {
-      height: 100vh;
-    }
-
-    .tracked {
-      letter-spacing: .1em;
-    }
-
-    .lh-title {
-      line-height: 1.25;
-    }
-
-    .lh-copy {
-      line-height: 1.5;
-    }
-
-    .w-100 {
-      width: 100%;
-    }
-
-    .white-70 {
-      color: rgba(255, 255, 255, .7);
-    }
-
-    .white-60 {
-      color: rgba(255, 255, 255, .6);
-    }
-
-    .white {
-      color: #fff;
-    }
-
-    .bg-dark-gray {
-      background-color: #333;
-    }
-
-    .pv5 {
-      padding-top: 4rem;
-      padding-bottom: 4rem;
-    }
-
-    .ph0 {
-      padding-left: 0;
-      padding-right: 0;
-    }
-
-    .ph2 {
-      padding-left: .5rem;
-      padding-right: .5rem;
-    }
-
-    .mb2 {
-      margin-bottom: .5rem;
-    }
-
-    .mh0 {
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    .tc {
-      text-align: center;
-    }
-
-    .ttu {
-      text-transform: uppercase;
-    }
-
-    .f1 {
-      font-size: 3rem;
-    }
-
-    .f4 {
-      font-size: 1.25rem;
-    }
-
-    .f5 {
-      font-size: 1rem;
-    }
-
-    .f6 {
-      font-size: .875rem;
-    }
-
-    .measure {
-      max-width: 30em;
-    }
-
-    .measure-wide {
-      max-width: 34em;
-    }
-
-    .center {
-      margin-right: auto;
-      margin-left: auto;
-    }
-
-    .v-mid {
-      vertical-align: middle;
-    }
-
-    @media screen and (min-width: 60em) {
-      .f-headline-l {
-        font-size: 6rem;
-      }
-    }
-
-    .ba {
-      border-style: solid;
-      border-width: 1px;
-    }
-
-    .bn {
-      border-style: none;
-      border-width: 0;
-    }
-
-    .b--black-10 {
-      border-color: rgba(0, 0, 0, .1);
-    }
-
-    .cf:before,
-    .cf:after {
-      content: " ";
-      display: table;
-    }
-
-    .cf:after {
-      clear: both;
-    }
-
-    .cf {
-      *zoom: 1;
-    }
-
-    .fl {
-      float: left;
-      _display: inline;
-    }
-
-    .input-reset {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-    }
-
-    .button-reset::-moz-focus-inner,
-    .input-reset::-moz-focus-inner {
-      border: 0;
-      padding: 0;
-    }
-
-    .lh-solid {
-      line-height: 1;
-    }
-
-    .mw7 {
-      max-width: 48rem;
-    }
-
-    .w-100 {
-      width: 100%;
-    }
-
-    .black-80 {
-      color: rgba(0, 0, 0, .8);
-    }
-
-    .white {
-      color: #fff;
-    }
-
-    .bg-black-70 {
-      background-color: rgba(0, 0, 0, .7);
-    }
-
-    .bg-white {
-      background-color: #fff;
-    }
-
-    .hover-bg-black:hover {
-      background-color: #000;
-    }
-
-    .hover-bg-black:focus {
-      background-color: #000;
-    }
-
-    .pa0 {
-      padding: 0;
-    }
-
-    .pa3 {
-      padding: 1rem;
-    }
-
-    .pa4 {
-      padding: 2rem;
-    }
-
-    .pv3 {
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-    }
-
-    .ma0 {
-      margin: 0;
-    }
-
-    .mb3 {
-      margin-bottom: 1rem;
-    }
-
-    .tc {
-      text-align: center;
-    }
-
-    .f5 {
-      font-size: 1rem;
-    }
-
-    .f6 {
-      font-size: .875rem;
-    }
-
-    .center {
-      margin-right: auto;
-      margin-left: auto;
-    }
-
-    .clip {
-      position: fixed !important;
-      _position: absolute !important;
-      clip: rect(1px 1px 1px 1px);
-      clip: rect(1px, 1px, 1px, 1px);
-    }
-
-    .pointer:hover {
-      cursor: pointer;
-    }
-
-    .bg-animate,
-    .bg-animate:hover,
-    .bg-animate:focus {
-      transition: background-color .15s ease-in-out;
-    }
-
-    @media screen and (min-width: 30em) {
-      .br2-ns {
-        border-radius: .25rem;
-      }
-
-      .br--right-ns {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-      }
-
-      .br--left-ns {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-      }
-
-      .f4-ns {
-        font-size: 1.25rem;
-      }
-    }
-
-    @media screen and (min-width: 30em) and (max-width: 60em) {
-      .w-25-m {
-        width: 25%;
-      }
-
-      .w-75-m {
-        width: 75%;
-      }
-    }
-
-    @media screen and (min-width: 60em) {
-      .w-20-l {
-        width: 20%;
-      }
-
-      .w-80-l {
-        width: 80%;
-      }
-
-      .pa4-l {
-        padding: 2rem;
-      }
-
-      .f5-l {
-        font-size: 1rem;
-      }
-    }
-  </style>
-  <!-- Piwik -->
-  <script type="text/javascript">
-    var _paq = _paq || [];
-    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u="//bclinkinbeard.innocraft.cloud/";
-      _paq.push(['setTrackerUrl', u+'piwik.php']);
-      _paq.push(['setSiteId', '1']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-    })();
-  </script>
-  <!-- End Piwik Code -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Quicksand" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
 <body>
-  <div class="bg-light-gray flex items-center justify-center vh-50 vh-75-ns">
-    <img src="cover.jpg" alt="Book cover">
-  </div>
-  <div class="center measure-wide f5 lh-copy pt3 ph4 ph0-l">
-    <h1 class="lh-title tc mb0">100% Money Back Guarantee</h1>
-    <div class="flex flex-column items-center pv2 f4-ns">
-      <p>Plain and simple: if you&#39;re not completely satisfied I don&#39;t want to keep your money. Email me at <a href='mailto:ben@knowbetter.io' target='_blank' >ben@knowbetter.io</a> within 30 days of your purchase date and I will refund every cent of your money, no questions asked.</p>
-    </div>
-  </div>
-  <div class="center measure-wide f5 lh-copy ph4 ph0-l">
-    <h1 class="lh-title tc mb0">Who is this for?</h1>
-    <div class="flex flex-column items-center pv2 f4-ns">
-      <p>This book assumes you know the basics of D3 but are not familiar with SVG. If <em>D3 in 5 Days</em> was your first exposure to D3 this book should be perfect for you. It assumes no knowledge of SVG, but it does assume you understand things like scales and selections.</p>
-    </div>
-  </div>
-  <div class="center measure-wide f5 lh-copy ph4 ph0-l">
-    <h1 class="lh-title tc mb0">How is the book structured?</h1>
-    <div class="flex flex-column items-center pv2 f4-ns">
-      <p>This book is basically divided into 2 parts. The first 4 chapters cover the basics of SVG itself, and the last 6 chapters introduce D3 APIs and techniques for creating SVG charts programmatically.</p>
 
-      <ol>
-        <li>SVG Elements</li>
-        <li>Basic Shapes in SVG</li>
-        <li>Working with Text in SVG</li>
-        <li>SVG Groups and CSS Transforms</li>
-        <li>Creating SVG with D3 APIs</li>
-        <li>A Blueprint for Charts with Axes</li>
-        <li>SVG Bubble Charts with D3</li>
-        <li>SVG Line Charts with D3</li>
-        <li>SVG Area Charts with D3</li>
-        <li>Make Any SVG Responsive</li>
-      </ol>
+  <div class="container mx-auto px-8 max-w-lg leading-loose font-sans text-lg">
 
-      <p>The book is chock full of code examples, including several CodePen Pens. The book provides ample context and explanation for each one, but if you&#39;d like to explore them on your own they&#39;re <a href='https://codepen.io/collection/ee6b5121a5a3df356c72e11b80094c02/'>available as a collection here</a>.</p>
-      <p>If you purchase a bundle, you also receive 26 video lessons, totaling more than 2.5 hours of content! Nine of those lessons directly correspond to the content in this book and are referenced in-place within the text. (These videos are also available to <a href='https://egghead.io/courses/build-interactive-javascript-charts-with-d3-v4'>Egghead PRO subscribers</a>.)</p>
+    <h1 class="text-center py-8">Create stunning charts for every screen</h1>
+
+    <div class="mx-auto text-center">
+      <img src="cover.jpg" alt="Book cover" class="w-1/2">
     </div>
-  </div>
-  <div class="center measure-wide f5 lh-copy pt3 ph4 ph0-l">
-    <h1 class="lh-title tc mb0">D3 + SVG Purchase Options</h1>
-    <div class="flex flex-column items-center pv2 f4-ns">
-      <p>Finally, the good stuff! 😆 The book&#39;s site is not done yet, so these links will take you directly to a purchase page.</p>
-      <p><strong><a href='https://sowl.co/FYKZF'>Book only</a> - $39</strong> gets you the e-book in 3 formats: PDF, ePub, and Mobi.</p>
-      <p><strong><a href='https://sowl.co/A0H0H'>Book + Videos + Affiliate Coupons</a> - $99</strong> gets you the book, the videos, D3 in 5 Days as a PDF, and coupons for some great content by other authors. Discounts of <strong>at least 20%</strong> are included for <a href='https://swizec.com/reactd3js/'>React + D3v4</a>, <a href='https://gomakethings.com/resources/'>Vanilla JavaScript</a>, <a href='https://daveceddia.com/pure-react/'>Pure React</a>, and <a href='https://javebratt.com/ionic-firebase-book/'>Building Firebase Powered Ionic apps</a>.</p>
-      <p><strong><a href='https://sowl.co/dV5SC'>Book + Videos + Call</a> - $299</strong> gets you all of the above, plus a live call with me. Want to jump on Skype or Hangouts to get clarification on something that&#39;s not clicking? Want me to help debug some tough code? Let&#39;s do it!</p>
-    </div>
-  </div>
-  <div class="center measure-wide f5 lh-copy ph4 ph0-l">
-    <h1 class="lh-title tc pv3 dn db-ns">What subscribers are saying</h1>
-    <h1 class="lh-title tc pv3 dn-ns">What people think</h1>
-    <div class="flex flex-column items-center flex-row-ns items-start-ns f4-ns pb4">
-      <img src="../headshots/loren.jpg" width="120" height="120" class="fl-ns br-100 mb2 ba b--black-10" />
-      <div class="pl3">
-        <blockquote class="ma0 i dark-gray">If you want to learn D3, I cannot recommend Ben&apos;s newsletter highly enough. Sign up!</blockquote>
-        <p>&#8213; <a href="https://lorenstewart.me" class="dark-blue link underline hover-bg-lightest-blue">Loren Stewart</a></p>
+
+    <h2 class="text-center pt-6">Pain</h2>
+    <p>
+      <em>Relying on a 3rd party solution leaves you vulnerable</em>
+    </p>
+    <p>3rd party chart libraries can make for a great demo, but getting them to production is a different story.</p>
+    <p>When you start a new project, you don&#39;t know
+      <em>exactly</em> what you&#39;re going to build. You might have user stories, or wireframes, or even a detailed spec, but
+      if you&#39;re doing it right, things will evolve. You&#39;ll discover the data doesn&#39;t support that view, or users
+      would be happier with a different view of things, and changes will be made.</p>
+    <p>Problem is, you don&#39;t know until it&#39;s too late that your library of choice doesn&#39;t support your latest requirement.</p>
+    <p>Uncertainty is another word for stress.</p>
+    <p>Does that off-the-shelf library give you the APIs and styles you need to implement the vision? Anybody&#39;s guess.</p>
+    <p>
+      <em>Customizability</em>
+    </p>
+    <p>Stop me if this sounds familiar. Your designer sends over revision #72, and they want to make some &quot;tweaks&quot;
+      to the charts. Problem is, the tweaks they want aren&#39;t something the library exposes to you. &quot;Nobody would
+      ever need to change
+      <em>that</em>.&quot;</p>
+    <p>Uh huh.</p>
+    <p>Now you have some decisions to make. Do you tell your colleagues (or your boss?!) &quot;sorry folks, I picked a charting
+      library that restricts what we can and cannot implement.&quot;? That doesn&#39;t sound very good for your career.</p>
+    <p>At the same time, ripping out your chart library in favor of another one doesn&#39;t make sense either. Who&#39;s to
+      say it&#39;s any better? What if it&#39;s worse?!</p>
+    <p>Rock, meet hard place. Population: you.</p>
+    <p>
+      <em>Performance AXE?</em>
+    </p>
+
+    <h2 class="text-center pt-6">Dream</h2>
+    <p>
+      <em>Native web tech on every device</em>
+    </p>
+    <p>Wouldn&#39;t it be better if you knew how to target open web technology that is performant and ubiquitous? SVG has been
+      a W3C spec since 1999! Not only does it perform well across devices, it&#39;s also boasts small file sizes and it compresses
+      really well.</p>
+    <p>
+      <em>One function to ensure responsiveness</em>
+    </p>
+    <p>What if you could make every chart responsive using one small utility function? From a not-so-new smartphone to a massive
+      5K monitor and everything in between, SVG graphics will stay crisp and clear if built correctly.</p>
+    <p>
+      <em>Performant by default with room to grow</em>
+    </p>
+    <p>Thanks to its maturity SVG is performant by default. Out of the box, you could use it to draw (and animate!) hundreds
+      if not thousands of elements without issue.</p>
+    <p>If you do manage to bump up against the limits of SVG, D3 enables you to easily target
+      <code>canvas</code> elements instead by changing just a small fraction of your code.</p>
+    <p>
+      <em>Control over every pixel</em>
+    </p>
+    <p>With D3 and SVG, you use CSS to style things, just like with the rest of your code. You&#39;ve got direct, clean access
+      to every stroke, fill, and dimension.</p>
+    <p>
+      <em>Build foundational knowledge</em>
+    </p>
+    <p>Data Visualization is a great use case for SVG but it&#39;s not the only one. SVG has become a popular replacement for
+      icon fonts and simple images thanks to their versatility and resolution independence. Knowing how to work with SVG
+      is a valuable skill to have in your toolbox, especially for developers tasked with building creative UIs and interactions.</p>
+    <p>
+      <em>The world is mobile. Your charts had better be, too. AXE?</em>
+    </p>
+
+    <h2 class="text-center pt-6">Fix</h2>
+    <p>D3 + SVG: How to Create Flawless Charts for Any Screen will take you from plain web dev to data viz master</p>
+    <p>Concepts and example code side by side</p>
+    <p>CodePens for easy tinkering</p>
+    <p>D3 in 5 Parts Booklet</p>
+    <p>Video course to take you from zero to proficient in 2.5 hours</p>
+    <p>3 months access to group Q+A</p>
+    <p>Hundreds in discounts</p>
+    <p>Live call</p>
+
+    <!-- Begin Pricing Table -->
+    <div class="flex flex-col lg:flex-row lg:w-full md:w-2/3 mx-auto mb-6">
+      <div class="z-0 pb-3 lg:py-6 shadow lg:w-1/3 text-slate text-center">
+        <h2 class="py-4 shadow bg-blue-dark text-white uppercase">eBook</h2>
+        <div class="text-4xl py-6" style="font-family: 'Montserrat', sans-serif;">$39</div>
+        <div class="bg-blue-dark mb-6 mt-2 mx-auto py-1 rounded-full shadow text-white uppercase w-1/2">Details</div>
+        <ul class="text-left inline-block mx-auto pl-4 leading-loose">
+          <li>D3 + SVG eBook</li>
+          <li>D3 in 5 Days PDF Booklet</li>
+        </ul>
+        <div class="m-6 mx-auto w-2/3">
+          <button class="bg-green hover:bg-green-light text-white font-bold w-5/6 py-6 border-b-4 border-green-dark hover:border-green rounded uppercase">
+            Purchase
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="flex flex-column items-center flex-row-ns items-start-ns f4-ns pb4">
-      <img src="../headshots/jonathan.jpg" width="120" height="120" class="fl-ns br-100 mb2 ba b--black-10" />
-      <div class="pl3">
-        <blockquote class="ma0 i dark-gray">Ben's five-day D3 email course is so clear and well-written that I accidentally learned D3 just from proof reading it for him. Now I'm looking for places to use it in my own work!</blockquote>
-        <p>&#8213; <a href="http://expensiveproblem.com" class="dark-blue link underline hover-bg-lightest-blue">Jonathan Stark</a></p>
+
+      <div class="z-20 mt-4 pb-3 shadow-md lg:w-2/5 text-slate text-center">
+        <div class="py-8 flex-col items-center shadow-lg bg-blue-dark text-white uppercase border-white">
+          <ul class="list-reset leading-normal text-left inline-block">
+            <li>
+              <h2 class="text-center">+ Video Course</h2>
+            </li>
+            <li>
+              <h2 class="text-center pt-6">+ Office Hours</h2>
+            </li>
+            <li>
+              <h2 class="text-center pt-6">+ Coupon Codes</h2>
+            </li>
+          </ul>
+        </div>
+        <div class="text-5xl py-6" style="font-family: 'Montserrat', sans-serif;">$99</div>
+        <div class="bg-blue-dark mb-6 mt-2 mx-auto py-1 rounded-full shadow text-white uppercase w-1/2">Details</div>
+        <ul class="text-left inline-block mx-auto pl-4 leading-loose">
+          <li>D3 + SVG eBook</li>
+          <li>D3 in 5 Days PDF Booklet</li>
+          <li class="font-bold">D3 v4 Video Course (2.5hrs)</li>
+          <li class="font-bold">3 Months Office Hours Access</li>
+          <li class="font-bold">$500+ in 3rd party discounts</li>
+        </ul>
+        <div class="m-6 mx-auto w-2/3">
+          <button class="bg-green hover:bg-green-light text-white font-bold w-5/6 py-6 border-b-4 border-green-dark hover:border-green rounded uppercase">
+            Purchase
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="flex flex-column items-center flex-row-ns items-start-ns f4-ns pb4">
-      <img src="../headshots/lukas.jpg" width="120" height="120" class="fl-ns br-100 mb2 ba b--black-10" />
-      <div class="pl3">
-        <blockquote class="ma0 i dark-gray">Being a great teacher requires a deep sense of empathy to meet a new student where they are. For years, I have admired Ben's commitment to helping students cross the chasm between awareness and doing, and this mini-course is just another example of why he is one of the best in the space.</blockquote>
-        <p>&#8213; Lukas Ruebbelke</p>
-      </div>
-    </div>
-  </div>
-  <div class="bg-black-10">
-    <div class="center measure-wide f5 lh-copy pt3 ph4 ph0-l">
-      <h1 class="lh-title tc mb0">Who created this?</h1>
-      <div class="flex flex-column items-center pv2 f4-ns">
-        <img src="../headshots/ben.jpg" width="120" height="120" class="mv3 br-100" />
-        <div class="pb5">
-          <p>Ben Clinkinbeard is a web developer with nearly two decades of experience focused on D3, React, Node, and ES6+. In addition to professional consulting, Ben shares his knowledge through <a href="https://benclinkinbeard.com/posts/" class="dark-blue link underline hover-bg-lightest-blue">blogging</a>, conference presentations, and <a href="https://egghead.io/instructors/ben-clinkinbeard" class="dark-blue link underline hover-bg-lightest-blue">video tutorials</a>.</p>
-          <p>To date, <span class="bg-lightest-blue">more than 12,700 HOURS</span> have been spent watching his lessons.</p>
+
+      <div class="z-0 pb-3 lg:py-6 shadow lg:w-1/3 text-slate text-center">
+        <h2 class="py-4 shadow bg-blue-dark text-white uppercase">+ 1-on-1 Call</h2>
+        <div class="text-4xl py-6" style="font-family: 'Montserrat', sans-serif;">$299</div>
+        <div class="bg-blue-dark mb-6 mt-2 mx-auto py-1 rounded-full shadow text-white uppercase w-1/2">Details</div>
+        <ul class="text-left inline-block mx-auto pl-4 leading-loose">
+          <li>D3 + SVG eBook</li>
+          <li>D3 in 5 Days PDF Booklet</li>
+          <li>D3 v4 Video Course (2.5hrs)</li>
+          <li>3 Months Office Hours Access</li>
+          <li>$500+ in 3rd party discounts</li>
+          <li class="font-bold">Live 1-on-1 Call</li>
+        </ul>
+        <div class="m-6 mx-auto w-2/3">
+          <button class="bg-green hover:bg-green-light text-white font-bold w-5/6 py-6 border-b-4 border-green-dark hover:border-green rounded uppercase">
+            Purchase
+          </button>
         </div>
       </div>
     </div>
-  </div>
-  <script>
-    if (location.search.startsWith('?e=')) {
-      document.getElementById('email-address').value = location.search.substr(3);
-    }
-    if (location.search.startsWith('?confirmed')) {
-      var fc = document.getElementById('form-container');
-      fc.parentNode.removeChild(fc);
-    }
-  </script>
-  <!-- Drip -->
-  <script type="text/javascript">
-    var _dcq = _dcq || [];
-    var _dcs = _dcs || {};
-    _dcs.account = '4436187';
 
-    (function() {
-      var dc = document.createElement('script');
-      dc.type = 'text/javascript'; dc.async = true;
-      dc.src = '//tag.getdrip.com/4436187.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(dc, s);
-    })();
-  </script>
+    <h3 class="text-center">100% Money Back Guarantee</h3>
+    Plain and simple: if you&#39;re not completely satisfied I don&#39;t want to keep your money. Email me at
+    <a href='mailto:ben@knowbetter.io' target='_blank'>ben@knowbetter.io</a> within 30 days of your purchase date and I will refund every cent of your money, no questions asked.
+    <!-- End Pricing Table -->
+
+    <h2 class="text-center pt-6">Social Proof</h2>
+    <p>Testimonials</p>
+
+    <h2 class="text-center pt-6">You can&#39;t learn D3 quicker than this (Overcome Objections)</h2>
+    <p>These materials contain no magic. Every bit of information in them is freely available on the internet.</p>
+    <p>But a lack of information is rarely the problem these days. The challenge is knowing which information is worth learning
+      and what to ignore. </p>
+    <p>Play up info density, concise, etc</p>
+
+    <h3>Who is this for?</h3>
+    This book assumes you know the basics of D3 but are not familiar with SVG. If
+    <em>D3 in 5 Days</em> was your first exposure to D3 this book should be perfect for you. It assumes no knowledge of SVG,
+    but it does assume you understand things like scales and selections.
+
+    <h3>How is the book structured?</h3>
+    This book is basically divided into 2 parts. The first 4 chapters cover the basics of SVG itself, and the last 6 chapters
+        introduce D3 APIs and techniques for creating SVG charts programmatically.
+
+    <ol>
+      <li>SVG Elements</li>
+      <li>Basic Shapes in SVG</li>
+      <li>Working with Text in SVG</li>
+      <li>SVG Groups and CSS Transforms</li>
+      <li>Creating SVG with D3 APIs</li>
+      <li>A Blueprint for Charts with Axes</li>
+      <li>SVG Bubble Charts with D3</li>
+      <li>SVG Line Charts with D3</li>
+      <li>SVG Area Charts with D3</li>
+      <li>Make Any SVG Responsive</li>
+    </ol>
+
+    The book is chock full of code examples, including several CodePen Pens. The book provides ample context and explanation
+      for each one, but if you&#39;d like to explore them on your own they&#39;re
+      <a href='https://codepen.io/collection/ee6b5121a5a3df356c72e11b80094c02/'>available as a collection here</a>.
+
+      If you purchase a bundle, you also receive 26 video lessons, totaling more than 2.5 hours! Nine of those
+      lessons directly correspond to the content in this book and are referenced in-place within the text. (These videos
+      are also available to
+      <a href='https://egghead.io/courses/build-interactive-javascript-charts-with-d3-v4'>Egghead PRO subscribers</a>.)
+
+    <h2 class="text-center pt-6">Uniqueness</h2>
+    <p>Doing data viz since 2009</p>
+    <p>Have taught thousands of devs for thousands of hours</p>
+    <p>Available for questions</p>
+    <p>Obsessed with clarity and brevity</p>
+
+    <h2 class="text-center pt-6">2nd CTA</h2>
+    <p>Pricing table</p>
+    <p>Guarantee</p>
+
+    <h2 class="text-center pt-6">Urgency</h2>
+    <p>Limited supply coupons?</p>
+    <p>Launch price</p>
+    <p>Limited availability for 1-on-1 (2 spots left?)</p>
+
+  </div>
+
 </body>
 
 </html>
