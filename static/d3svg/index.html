@@ -18,218 +18,401 @@
 
 <body>
 
-  <div class="container mx-auto px-8 max-w-lg leading-loose font-sans text-lg">
+  <div class="flex">
+    <div class="w-1/6 md:w-1/5 xl:w-1/4"></div>
+    <div class="w-5/6 md:w-3/5 xl:w-1/2 font-sans text-lg text-grey-darkest leading-normal">
+      <h1 class="text-center py-8">Create stunning charts for every screen</h1>
 
-    <h1 class="text-center py-8">Create stunning charts for every screen</h1>
-
-    <div class="mx-auto text-center">
-      <img src="cover.jpg" alt="Book cover" class="w-1/2">
-    </div>
-
-    <h2 class="text-center pt-6">Pain</h2>
-    <p>
-      <em>Relying on a 3rd party solution leaves you vulnerable</em>
-    </p>
-    <p>3rd party chart libraries can make for a great demo, but getting them to production is a different story.</p>
-    <p>When you start a new project, you don&#39;t know
-      <em>exactly</em> what you&#39;re going to build. You might have user stories, or wireframes, or even a detailed spec, but
-      if you&#39;re doing it right, things will evolve. You&#39;ll discover the data doesn&#39;t support that view, or users
-      would be happier with a different view of things, and changes will be made.</p>
-    <p>Problem is, you don&#39;t know until it&#39;s too late that your library of choice doesn&#39;t support your latest requirement.</p>
-    <p>Uncertainty is another word for stress.</p>
-    <p>Does that off-the-shelf library give you the APIs and styles you need to implement the vision? Anybody&#39;s guess.</p>
-    <p>
-      <em>Customizability</em>
-    </p>
-    <p>Stop me if this sounds familiar. Your designer sends over revision #72, and they want to make some &quot;tweaks&quot;
-      to the charts. Problem is, the tweaks they want aren&#39;t something the library exposes to you. &quot;Nobody would
-      ever need to change
-      <em>that</em>.&quot;</p>
-    <p>Uh huh.</p>
-    <p>Now you have some decisions to make. Do you tell your colleagues (or your boss?!) &quot;sorry folks, I picked a charting
-      library that restricts what we can and cannot implement.&quot;? That doesn&#39;t sound very good for your career.</p>
-    <p>At the same time, ripping out your chart library in favor of another one doesn&#39;t make sense either. Who&#39;s to
-      say it&#39;s any better? What if it&#39;s worse?!</p>
-    <p>Rock, meet hard place. Population: you.</p>
-    <p>
-      <em>Performance AXE?</em>
-    </p>
-
-    <h2 class="text-center pt-6">Dream</h2>
-    <p>
-      <em>Native web tech on every device</em>
-    </p>
-    <p>Wouldn&#39;t it be better if you knew how to target open web technology that is performant and ubiquitous? SVG has been
-      a W3C spec since 1999! Not only does it perform well across devices, it&#39;s also boasts small file sizes and it compresses
-      really well.</p>
-    <p>
-      <em>One function to ensure responsiveness</em>
-    </p>
-    <p>What if you could make every chart responsive using one small utility function? From a not-so-new smartphone to a massive
-      5K monitor and everything in between, SVG graphics will stay crisp and clear if built correctly.</p>
-    <p>
-      <em>Performant by default with room to grow</em>
-    </p>
-    <p>Thanks to its maturity SVG is performant by default. Out of the box, you could use it to draw (and animate!) hundreds
-      if not thousands of elements without issue.</p>
-    <p>If you do manage to bump up against the limits of SVG, D3 enables you to easily target
-      <code>canvas</code> elements instead by changing just a small fraction of your code.</p>
-    <p>
-      <em>Control over every pixel</em>
-    </p>
-    <p>With D3 and SVG, you use CSS to style things, just like with the rest of your code. You&#39;ve got direct, clean access
-      to every stroke, fill, and dimension.</p>
-    <p>
-      <em>Build foundational knowledge</em>
-    </p>
-    <p>Data Visualization is a great use case for SVG but it&#39;s not the only one. SVG has become a popular replacement for
-      icon fonts and simple images thanks to their versatility and resolution independence. Knowing how to work with SVG
-      is a valuable skill to have in your toolbox, especially for developers tasked with building creative UIs and interactions.</p>
-    <p>
-      <em>The world is mobile. Your charts had better be, too. AXE?</em>
-    </p>
-
-    <h2 class="text-center pt-6">Fix</h2>
-    <p>D3 + SVG: How to Create Flawless Charts for Any Screen will take you from plain web dev to data viz master</p>
-    <p>Concepts and example code side by side</p>
-    <p>CodePens for easy tinkering</p>
-    <p>D3 in 5 Parts Booklet</p>
-    <p>Video course to take you from zero to proficient in 2.5 hours</p>
-    <p>3 months access to group Q+A</p>
-    <p>Hundreds in discounts</p>
-    <p>Live call</p>
-
-    <!-- Begin Pricing Table -->
-    <div class="flex flex-col lg:flex-row lg:w-full md:w-2/3 mx-auto mb-6" style="width: 80vw; margin-left: calc(-1 * ((80vw - 100%) / 2));">
-      <div class="z-0 mt-0 pb-3 lg:py-6 shadow lg:w-1/3 text-slate text-center">
-        <h2 class="py-4 shadow bg-blue-dark text-white uppercase">eBook</h2>
-        <div class="text-4xl py-6" style="font-family: 'Montserrat', sans-serif;">$39</div>
-        <div class="bg-blue-dark mb-6 mt-2 mx-auto py-1 rounded-full shadow text-white uppercase w-1/2">Details</div>
-        <ul class="text-left inline-block mx-auto pl-4 leading-loose">
-          <li>D3 + SVG eBook</li>
-          <li>D3 in 5 Days PDF Booklet</li>
-        </ul>
-        <div class="m-6 mx-auto w-2/3">
-          <a href="https://transactions.sendowl.com/packages/60051/56620417/purchase" rel="nofollow">
-            <button class="bg-green hover:bg-green-light text-white font-bold w-5/6 py-6 border-b-4 border-green-dark hover:border-green rounded uppercase">
-              Purchase
-            </button>
-          </a>
-        </div>
+      <div class="mx-auto text-center">
+        <img src="cover.jpg" alt="Book cover" class="w-1/2">
       </div>
 
-      <div class="z-20 mt-4 lg:mt-0 pb-3 shadow-md lg:w-2/5 text-slate text-center">
-        <div class="py-8 flex-col items-center shadow-lg bg-blue-dark text-white uppercase border-white">
-          <ul class="list-reset leading-none text-left inline-block">
-            <li>
-              <h2 class="text-center">+ Video Course</h2>
-            </li>
-            <li>
-              <h2 class="text-center pt-6">+ Office Hours</h2>
-            </li>
-            <li>
-              <h2 class="text-center pt-6">+ Coupon Codes</h2>
-            </li>
+      <!-- PAIN -->
+      <h2 class="pt-8 pb-1 text-3xl">
+        Relying on 3rd party charts leaves you vulnerable
+      </h2>
+      <p class="pb-4">
+        3rd party chart libraries can make for a great demo, but getting them to production is a different story.
+      </p>
+      <p class="pb-4">
+        When you start a new project, you don&#39;t know <em>exactly</em> what you&#39;re going to build. You might have user stories, or wireframes, or even a detailed spec, but if you&#39;re doing it right, things will evolve. You&#39;ll discover the data doesn&#39;t support that view, or users would be happier with a different view of things, and changes will be made.
+      </p>
+      <p class="pb-4">
+        Problem is, you don&#39;t know until it&#39;s too late that your library of choice doesn&#39;t support your latest requirement.
+      </p>
+      <p class="pb-4">
+        Uncertainty is just another word for stress.
+      </p>
+      <p class="pb-4">
+        Does that off-the-shelf library give you the APIs and styles you need to implement the vision? Anybody&#39;s guess.
+      </p>
+
+      <h3 class="pt-4 pb-2 text-grey-dark font-thin italic text-2xl">Complete creative control</h3>
+      <p class="pb-4">
+        Stop me if this sounds familiar. Your designer sends over revision #72, and they want to make some &quot;tweaks&quot; to the charts. Problem is, the tweaks they want aren&#39;t something the library exposes to you. &quot;Nobody would ever need to change <em>that</em>.&quot;
+      </p>
+      <p class="pb-4">
+        Uh huh.
+      </p>
+      <p class="pb-4">
+        Now you have some decisions to make. Do you tell your boss &quot;sorry, I picked a charting library that restricts what we can and cannot implement.&quot;? That doesn&#39;t sound like it would be very good for your career.
+      </p>
+      <p class="pb-4">
+        At the same time, ripping out your chart library in favor of another one doesn&#39;t make sense either. Who&#39;s to say it&#39;s any better? What if it&#39;s worse?!
+      </p>
+      <p class="pb-4">
+        Rock, meet hard place. Population: you.
+      </p>
+
+      <!-- DREAM -->
+      <h2 class="pt-8 pb-1 text-3xl">
+        It doesn't have to be that stressful
+      </h2>
+      <p class="pb-4">
+        You don&#39;t need to stake your reputation on a bundle of code written by a stranger.
+      </p>
+
+      <h3 class="pt-4 pb-2 text-grey-dark font-thin italic text-2xl">
+        Every device is already capable
+      </h3>
+      <p class="pb-4">
+        Native, open web tech has all the tools you need to avoid looking like a schmuck.
+      </p>
+      <p class="pb-4">
+        Wouldn&#39;t it be nice if you knew how to target these performant and ubiquitous technologies? SVG has been a W3C spec since 1999! Not only does it perform well across devices, it also boasts small file sizes and it compresses really well.
+      </p>
+
+      <h3 class="pt-4 pb-2 text-grey-dark font-thin italic text-2xl">
+        Turnkey responsive design
+      </h3>
+      <p class="pb-4">
+        What if you could make <em>every single chart</em> responsive with one small utility function? From a not-so-new smartphone to a massive 5K monitor and everything in between, SVG graphics will stay crisp and clear if built correctly.
+      </p>
+
+      <h3 class="pt-4 pb-2 text-grey-dark font-thin italic text-2xl">
+        Performant by default with room to grow
+      </h3>
+      <p class="pb-4">
+        Thanks to its maturity SVG is performant by default. Out of the box, you could use it to draw (and animate!) hundreds if not thousands of elements without issue.
+      </p>
+      <p class="pb-4">
+        If you do manage to bump up against the limits of SVG, D3 enables you to easily target <code>canvas</code> elements instead by changing just a small fraction of your code.
+      </p>
+
+      <h3 class="pt-4 pb-2 text-grey-dark font-thin italic text-2xl">
+        Control over every pixel
+      </h3>
+      <p class="pb-4">
+        With D3 and SVG, you use CSS to style things, just like with the rest of your code. You&#39;ve got direct, clean access to every stroke, fill, and dimension in existence.
+      </p>
+
+      <h3 class="pt-4 pb-2 text-grey-dark font-thin italic text-2xl">
+        Build foundational knowledge
+      </h3>
+      <p class="pb-4">
+        Data Visualization is a great use case for SVG but it&#39;s not the only one. SVG has become a popular replacement for icon fonts and simple images thanks to their versatility and resolution independence.
+      </p>
+      <p class="pb-4">
+        Knowing how to work with SVG is a valuable skill to have in your toolbox, especially for developers tasked with building creative UIs and interactions.
+      </p>
+
+      <!-- FIX -->
+      <h2 class="pt-8 pb-1 text-3xl">
+        Learning D3 doesn&#39;t have to be hard
+      </h2>
+      <p class="pb-4">
+        Web developers who already know HTML, CSS, and JavaScript can get up and running with D3 in a handful of hours. <em>D3 + SVG: How to Create Flawless Charts for Any Screen</em> will take you from standard web dev to your team&#39;s go-to data visualization engineer in just 10 concise chapters.
+      </p>
+      <p class="pb-4">
+        Every concept in the book is accompanied by example code embedded directly in the text. Additionally, every example is built on CodePen, so you&#39;re one click away from experimenting with the code on your own.
+      </p>
+      <p class="pb-4">
+        If you&#39;re completely new to D3, the bundled <em>D3 in 5 Days</em> booklet will teach all the prerequisites. The two books together can take you from zero to D3 in a day or two.
+      </p>
+      <p class="pb-4">
+        Guaranteed.
+      </p>
+
+      <h3 class="pt-4 pb-2 text-grey-dark font-thin italic text-2xl">
+        Want to dive even deeper?
+      </h3>
+      <p class="pb-4">
+        The Complete Bundle includes <em>Build Interactive JavaScript Charts with D3 v4</em>, an in-depth video course with <strong>2.5 hours of instruction spread across 26 bite-sized lessons.</strong> This course was previously only available to Egghead PRO members.
+      </p>
+      <p class="pb-4">
+        When you purchase The Complete Bundle you also receive 3 months access to group Q+A office hours. Bring your questions and code samples and we&#39;ll sort them out together!
+      </p>
+
+      <h3 class="pt-4 pb-2 text-grey-dark font-thin italic text-2xl">
+        Do you need personalized help?
+      </h3>
+      <p class="pb-4">
+        Embarking on a big project? Considering a refactor? Feeling constrained by past choices?
+      </p>
+      <p class="pb-4">
+        If you want advice from a seasoned expert with several years of D3 experience, the Coaching Call was made for you. I&#39;ll join you live on Skype or Hangouts or whatever to provide advice for your specific scenario.
+      </p>
+
+      <!-- CTA #1 -->
+      <!-- Begin Pricing Table -->
+      <div class="flex flex-col lg:flex-row lg:w-full md:w-2/3 mx-auto mb-6 pt-8" style="width: 80vw; margin-left: calc(-1 * ((80vw - 100%) / 2));">
+        <div class="z-0 mt-0 pb-3 lg:py-6 shadow lg:w-1/3 text-slate text-center">
+          <h2 class="py-4 shadow bg-blue-dark text-white">Just the Book</h2>
+          <div class="text-4xl py-6" style="font-family: 'Montserrat', sans-serif;">$39</div>
+          <div class="bg-blue-dark mb-6 mt-2 mx-auto py-1 rounded-full shadow text-white uppercase w-1/2">Details</div>
+          <ul class="text-left inline-block mx-auto pl-4 leading-loose">
+            <li>D3 + SVG eBook</li>
+            <li>D3 in 5 Days PDF Booklet</li>
           </ul>
+          <div class="m-6 mx-auto w-2/3">
+            <a href="https://transactions.sendowl.com/packages/60051/56620417/purchase" rel="nofollow">
+              <button class="bg-green hover:bg-green-light text-white font-bold w-5/6 py-6 border-b-4 border-green-dark hover:border-green rounded uppercase">
+                Purchase
+              </button>
+            </a>
+          </div>
         </div>
-        <div class="text-5xl py-6" style="font-family: 'Montserrat', sans-serif;">$99</div>
-        <div class="bg-blue-dark mb-6 mt-2 mx-auto py-1 rounded-full shadow text-white uppercase w-1/2">Details</div>
-        <ul class="text-left inline-block mx-auto pl-4 leading-loose">
-          <li>D3 + SVG eBook</li>
-          <li>D3 in 5 Days PDF Booklet</li>
-          <li class="font-bold">D3 v4 Video Course (2.5hrs)</li>
-          <li class="font-bold">3 Months Office Hours Access</li>
-          <li class="font-bold">$500+ in 3rd party discounts</li>
-        </ul>
-        <div class="m-6 mx-auto w-2/3">
-          <a href="https://transactions.sendowl.com/packages/59871/50315877/purchase" rel="nofollow">
-            <button class="bg-green hover:bg-green-light text-white font-bold w-5/6 py-6 border-b-4 border-green-dark hover:border-green rounded uppercase">
-              Purchase
-            </button>
-          </a>
+
+        <div class="z-20 mt-4 lg:mt-0 pb-3 shadow-md lg:w-2/5 text-slate text-center">
+          <div class="py-8 flex-col items-center shadow-lg bg-blue-dark text-white border-white">
+            <ul class="list-reset leading-none text-left inline-block">
+              <li>
+                <h2 class="text-center">The Complete Bundle</h2>
+              </li>
+            </ul>
+          </div>
+          <div class="text-5xl py-6" style="font-family: 'Montserrat', sans-serif;">$99</div>
+          <div class="bg-blue-dark mb-6 mt-2 mx-auto py-1 rounded-full shadow text-white uppercase w-1/2">Details</div>
+          <ul class="text-left inline-block mx-auto pl-4 leading-loose">
+            <li class="text-grey-darker font-thin">D3 + SVG eBook</li>
+            <li class="text-grey-darker font-thin">D3 in 5 Days PDF Booklet</li>
+            <li class="font-bold">Video Course (2.5hrs)</li>
+            <li class="font-bold">3 Months of Office Hours</li>
+            <li class="font-bold">30% off Wes Bos courses</li>
+            <li class="font-bold">30% off Egghead PRO</li>
+            <li class="font-bold">Hundreds more in discounts</li>
+          </ul>
+          <div class="m-6 mx-auto w-2/3">
+            <a href="https://transactions.sendowl.com/packages/59871/50315877/purchase" rel="nofollow">
+              <button class="bg-green hover:bg-green-light text-white font-bold w-5/6 py-6 border-b-4 border-green-dark hover:border-green rounded uppercase">
+                Purchase
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div class="z-0 mt-4 lg:mt-0 pb-3 lg:py-6 shadow lg:w-1/3 text-slate text-center">
+          <h2 class="py-4 shadow bg-blue-dark text-white">Coaching Call</h2>
+          <div class="text-4xl py-6" style="font-family: 'Montserrat', sans-serif;">$299</div>
+          <div class="bg-blue-dark mb-6 mt-2 mx-auto py-1 rounded-full shadow text-white uppercase w-1/2">Details</div>
+          <ul class="text-left inline-block mx-auto pl-4 leading-loose">
+            <li class="text-grey-darker font-thin">D3 + SVG eBook</li>
+            <li class="text-grey-darker font-thin">D3 in 5 Days PDF Booklet</li>
+            <li class="text-grey-darker font-thin">Video Course (2.5hrs)</li>
+            <li class="text-grey-darker font-thin">3 Months of Office Hours</li>
+            <li class="text-grey-darker font-thin">30% off Wes Bos courses</li>
+            <li class="text-grey-darker font-thin">30% off Egghead PRO</li>
+            <li class="text-grey-darker font-thin">Hundreds more in discounts</li>
+            <li class="font-bold">Live 1-on-1 Call</li>
+          </ul>
+          <div class="m-6 mx-auto w-2/3">
+            <a href="https://transactions.sendowl.com/packages/59872/0D45307E/purchase" rel="nofollow">
+              <button class="bg-green hover:bg-green-light text-white font-bold w-5/6 py-6 border-b-4 border-green-dark hover:border-green rounded uppercase">
+                Purchase
+              </button>
+            </a>
+          </div>
         </div>
       </div>
 
-      <div class="z-0 mt-4 lg:mt-0 pb-3 lg:py-6 shadow lg:w-1/3 text-slate text-center">
-        <h2 class="py-4 shadow bg-blue-dark text-white uppercase">+ 1-on-1 Call</h2>
-        <div class="text-4xl py-6" style="font-family: 'Montserrat', sans-serif;">$299</div>
-        <div class="bg-blue-dark mb-6 mt-2 mx-auto py-1 rounded-full shadow text-white uppercase w-1/2">Details</div>
-        <ul class="text-left inline-block mx-auto pl-4 leading-loose">
-          <li>D3 + SVG eBook</li>
-          <li>D3 in 5 Days PDF Booklet</li>
-          <li>D3 v4 Video Course (2.5hrs)</li>
-          <li>3 Months Office Hours Access</li>
-          <li>$500+ in 3rd party discounts</li>
-          <li class="font-bold">Live 1-on-1 Call</li>
-        </ul>
-        <div class="m-6 mx-auto w-2/3">
-          <a href="https://transactions.sendowl.com/packages/59872/0D45307E/purchase" rel="nofollow">
-            <button class="bg-green hover:bg-green-light text-white font-bold w-5/6 py-6 border-b-4 border-green-dark hover:border-green rounded uppercase">
-              Purchase
-            </button>
-          </a>
+      <h2 class="pb-1 text-center">
+        100% Money Back Guarantee
+      </h2>
+      <p class="pb-4">
+        Plain and simple: if you&#39;re not completely satisfied I don&#39;t want to keep your money. Email me at <a href='mailto:ben@knowbetter.io' target='_blank'>ben@knowbetter.io</a> within 30 days of your purchase date and I will refund every cent of your money, no questions asked.
+    </p>
+      <!-- End Pricing Table -->
+
+      <!-- SOCIAL PROOF -->
+      <h2 class="pt-8 pb-1 text-3xl">
+        What do readers say?
+      </h2>
+      <p class="pb-4">
+        Testimonials
+      </p>
+
+      <!-- OVERCOME OBJECTIONS -->
+      <h2 class="pt-8 pb-1 text-3xl">
+        The fastest path to D3 proficiency
+      </h2>
+      <p class="pb-4">
+        These materials contain no magic. Every bit of information in them is freely available on the internet. Heck, that's how I learned!
+      </p>
+      <p class="pb-4">
+        But it's taken me since 2011 to build my D3 skills to where they are now. I'm guessing you'd like to get up to speed a bit quicker than that. That's where these materials come in.
+      </p>
+      <p class="pb-4">
+        The <strong><em>D3 in 5 Days</em></strong> booklet can take you from zero to familiar in about 6000 words.
+      </p>
+      <p class="pb-4">
+        The <strong><em>D3 + SVG: How to Create Flawless Charts for Any Screen</em></strong> book is 10 concise chapters that start where D3 in 5 Days left off and take you through building several common chart types.
+      </p>
+      <p class="pb-4">
+        Finally, <strong><em>Build Interactive JavaScript Charts with D3 v4</em></strong> provides a video for most every topic in the book, plus several topics <em>not</em> covered in the book.
+      </p>
+
+      <h3 class="pt-4 pb-2 text-grey-dark font-thin italic text-2xl">
+        Who is this for?
+      </h3>
+      <p class="pb-4">
+        This is for any web developer who wants to add D3.js to their toolbox.
+      </p>
+      <p class="pb-4">
+        It only assumes you're familiar with HTML, CSS, and JavaScript. If <em>D3 in 5 Days</em> was your first exposure to D3 this book should be perfect for you. It assumes no knowledge of SVG.
+      </p>
+
+      <h3 class="pt-4 pb-2 text-grey-dark font-thin italic text-2xl">
+        How is the book structured?
+      </h3>
+      <p class="pb-4">
+        This book is divided into 2 parts. The first 4 chapters cover the basics of SVG itself, and the last 6 chapters introduce D3 APIs and techniques for creating SVG charts programmatically.
+      </p>
+
+      <ol class="pt-4 pb-8">
+        <li>SVG Elements</li>
+        <li>Basic Shapes in SVG</li>
+        <li>Working with Text in SVG</li>
+        <li>SVG Groups and CSS Transforms</li>
+        <li>Creating SVG with D3 APIs</li>
+        <li>A Blueprint for Charts with Axes</li>
+        <li>SVG Bubble Charts with D3</li>
+        <li>SVG Line Charts with D3</li>
+        <li>SVG Area Charts with D3</li>
+        <li>Make Any SVG Responsive</li>
+      </ol>
+
+      <p class="pb-4">
+        The book is chock full of CodePen examples. They&#39;re presented with ample context and explanation in the book, but if you&#39;d like to explore them on your own they&#39;re <a href='https://codepen.io/collection/ee6b5121a5a3df356c72e11b80094c02/'>available as a collection here</a>.
+      </p>
+      <p class="pb-4">
+        When you purchase a bundle you also receive 26 video lessons. Totaling more than 2.5 hours, nine of the lessons directly correspond to content in the book and are referenced in-place within the text. (These videos are also available to <a href='https://egghead.io/courses/build-interactive-javascript-charts-with-d3-v4'>Egghead PRO subscribers</a>.)
+      </p>
+
+      <!-- UNIQUENESS -->
+      <h2 class="pt-8 pb-1 text-3xl">
+        Proven Experience
+      </h2>
+      <p class="pb-4">
+        I'm Ben Clinkinbeard, a developer and instructor with more than 15 years experience. I've been doing data visualization since 2009 and using D3.js since 2011.
+      </p>
+      <p class="pb-4">
+        In just the past four years, <strong>over 25,000 developers have spent more than 18,000 hours</strong> watching my video lessons. That doesn't happen with educational content that doesn't work.
+      </p>
+      <p class="pb-4">
+        Obsessed with clarity, brevity, and information density, you can be assured this material will not waste your time. You'll get the knowledge you need to be successful in the shortest time possible.
+      </p>
+      <p class="pb-4">
+        Your success is my number one priority.
+      </p>
+
+      <!-- CTA #2 -->
+      <!-- Begin Pricing Table -->
+      <div class="flex flex-col lg:flex-row lg:w-full md:w-2/3 mx-auto mb-6 pt-8" style="width: 80vw; margin-left: calc(-1 * ((80vw - 100%) / 2));">
+        <div class="z-0 mt-0 pb-3 lg:py-6 shadow lg:w-1/3 text-slate text-center">
+          <h2 class="py-4 shadow bg-blue-dark text-white">Just the Book</h2>
+          <div class="text-4xl py-6" style="font-family: 'Montserrat', sans-serif;">$39</div>
+          <div class="bg-blue-dark mb-6 mt-2 mx-auto py-1 rounded-full shadow text-white uppercase w-1/2">Details</div>
+          <ul class="text-left inline-block mx-auto pl-4 leading-loose">
+            <li>D3 + SVG eBook</li>
+            <li>D3 in 5 Days PDF Booklet</li>
+          </ul>
+          <div class="m-6 mx-auto w-2/3">
+            <a href="https://transactions.sendowl.com/packages/60051/56620417/purchase" rel="nofollow">
+              <button class="bg-green hover:bg-green-light text-white font-bold w-5/6 py-6 border-b-4 border-green-dark hover:border-green rounded uppercase">
+                Purchase
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div class="z-20 mt-4 lg:mt-0 pb-3 shadow-md lg:w-2/5 text-slate text-center">
+          <div class="py-8 flex-col items-center shadow-lg bg-blue-dark text-white border-white">
+            <ul class="list-reset leading-none text-left inline-block">
+              <li>
+                <h2 class="text-center">The Complete Bundle</h2>
+              </li>
+            </ul>
+          </div>
+          <div class="text-5xl py-6" style="font-family: 'Montserrat', sans-serif;">$99</div>
+          <div class="bg-blue-dark mb-6 mt-2 mx-auto py-1 rounded-full shadow text-white uppercase w-1/2">Details</div>
+          <ul class="text-left inline-block mx-auto pl-4 leading-loose">
+            <li class="text-grey-darker font-thin">D3 + SVG eBook</li>
+            <li class="text-grey-darker font-thin">D3 in 5 Days PDF Booklet</li>
+            <li class="font-bold">Video Course (2.5hrs)</li>
+            <li class="font-bold">3 Months of Office Hours</li>
+            <li class="font-bold">30% off Wes Bos courses</li>
+            <li class="font-bold">30% off Egghead PRO</li>
+            <li class="font-bold">Hundreds more in discounts</li>
+          </ul>
+          <div class="m-6 mx-auto w-2/3">
+            <a href="https://transactions.sendowl.com/packages/59871/50315877/purchase" rel="nofollow">
+              <button class="bg-green hover:bg-green-light text-white font-bold w-5/6 py-6 border-b-4 border-green-dark hover:border-green rounded uppercase">
+                Purchase
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div class="z-0 mt-4 lg:mt-0 pb-3 lg:py-6 shadow lg:w-1/3 text-slate text-center">
+          <h2 class="py-4 shadow bg-blue-dark text-white">Coaching Call</h2>
+          <div class="text-4xl py-6" style="font-family: 'Montserrat', sans-serif;">$299</div>
+          <div class="bg-blue-dark mb-6 mt-2 mx-auto py-1 rounded-full shadow text-white uppercase w-1/2">Details</div>
+          <ul class="text-left inline-block mx-auto pl-4 leading-loose">
+            <li class="text-grey-darker font-thin">D3 + SVG eBook</li>
+            <li class="text-grey-darker font-thin">D3 in 5 Days PDF Booklet</li>
+            <li class="text-grey-darker font-thin">Video Course (2.5hrs)</li>
+            <li class="text-grey-darker font-thin">3 Months of Office Hours</li>
+            <li class="text-grey-darker font-thin">30% off Wes Bos courses</li>
+            <li class="text-grey-darker font-thin">30% off Egghead PRO</li>
+            <li class="text-grey-darker font-thin">Hundreds more in discounts</li>
+            <li class="font-bold">Live 1-on-1 Call</li>
+          </ul>
+          <div class="m-6 mx-auto w-2/3">
+            <a href="https://transactions.sendowl.com/packages/59872/0D45307E/purchase" rel="nofollow">
+              <button class="bg-green hover:bg-green-light text-white font-bold w-5/6 py-6 border-b-4 border-green-dark hover:border-green rounded uppercase">
+                Purchase
+              </button>
+            </a>
+          </div>
         </div>
       </div>
+
+      <h2 class="pb-1 text-center">
+        100% Money Back Guarantee
+      </h2>
+      <p class="pb-4">
+        Plain and simple: if you&#39;re not completely satisfied I don&#39;t want to keep your money. Email me at <a href='mailto:ben@knowbetter.io' target='_blank'>ben@knowbetter.io</a> within 30 days of your purchase date and I will refund every cent of your money, no questions asked.
+      </p>
+      <!-- End Pricing Table -->
+
+      <!-- URGENCY -->
+      <h2 class="pt-8 pb-1 text-3xl">
+        Control your career
+      </h2>
+      <p class="pb-4">
+        Upgrading your skillset puts you in the driver's seat. It increases your market value. It keeps you from being at the mercy of off-the-shelf code that is bound to disappoint.
+      </p>
+      <p class="pb-4">
+        Why would you wait? Get out from behind the 8 Ball.
+      </p>
+      <p class="pb-4">
+        The current launch pricing is not permanent, and there are a limited number of 1-on-1 calls available. There are currently <strong>4 Coaching Call spots</strong> available.
+      </p>
+      <p class="pb-8">
+        Happy hacking!
+      </p>
     </div>
-
-    <h3 class="text-center">100% Money Back Guarantee</h3>
-    Plain and simple: if you&#39;re not completely satisfied I don&#39;t want to keep your money. Email me at
-    <a href='mailto:ben@knowbetter.io' target='_blank'>ben@knowbetter.io</a> within 30 days of your purchase date and I will refund every cent of your money, no questions asked.
-    <!-- End Pricing Table -->
-
-    <h2 class="text-center pt-6">Social Proof</h2>
-    <p>Testimonials</p>
-
-    <h2 class="text-center pt-6">You can&#39;t learn D3 quicker than this (Overcome Objections)</h2>
-    <p>These materials contain no magic. Every bit of information in them is freely available on the internet.</p>
-    <p>But a lack of information is rarely the problem these days. The challenge is knowing which information is worth learning
-      and what to ignore. </p>
-    <p>Play up info density, concise, etc</p>
-
-    <h3>Who is this for?</h3>
-    This book assumes you know the basics of D3 but are not familiar with SVG. If
-    <em>D3 in 5 Days</em> was your first exposure to D3 this book should be perfect for you. It assumes no knowledge of SVG,
-    but it does assume you understand things like scales and selections.
-
-    <h3>How is the book structured?</h3>
-    This book is basically divided into 2 parts. The first 4 chapters cover the basics of SVG itself, and the last 6 chapters
-    introduce D3 APIs and techniques for creating SVG charts programmatically.
-
-    <ol>
-      <li>SVG Elements</li>
-      <li>Basic Shapes in SVG</li>
-      <li>Working with Text in SVG</li>
-      <li>SVG Groups and CSS Transforms</li>
-      <li>Creating SVG with D3 APIs</li>
-      <li>A Blueprint for Charts with Axes</li>
-      <li>SVG Bubble Charts with D3</li>
-      <li>SVG Line Charts with D3</li>
-      <li>SVG Area Charts with D3</li>
-      <li>Make Any SVG Responsive</li>
-    </ol>
-
-    The book is chock full of code examples, including several CodePen Pens. The book provides ample context and explanation
-    for each one, but if you&#39;d like to explore them on your own they&#39;re
-    <a href='https://codepen.io/collection/ee6b5121a5a3df356c72e11b80094c02/'>available as a collection here</a>. If you purchase a bundle, you also receive 26 video lessons, totaling more than 2.5
-    hours! Nine of those lessons directly correspond to the content in this book and are referenced in-place within the text.
-    (These videos are also available to
-    <a href='https://egghead.io/courses/build-interactive-javascript-charts-with-d3-v4'>Egghead PRO subscribers</a>.)
-
-    <h2 class="text-center pt-6">Uniqueness</h2>
-    <p>Doing data viz since 2009</p>
-    <p>To date 25,814 devs have spent 18,259 hours watching my video lessons.</p>
-    <p>Available for questions</p>
-    <p>Obsessed with clarity and brevity</p>
-
-    <h2 class="text-center pt-6">2nd CTA</h2>
-    <p>Pricing table</p>
-    <p>Guarantee</p>
-
-    <h2 class="text-center pt-6">Urgency</h2>
-    <p>Launch pricing is not permanent.</p>
-    <p>The are a limited number of 1-on-1 calls available. There are currently
-      <strong>4 spots</strong> available.</p>
-
+    <div class="w-1/6 md:w-1/5 xl:w-1/4"></div>
   </div>
 
   <script type="text/javascript" src="https://transactions.sendowl.com/assets/sendowl.js"></script>
