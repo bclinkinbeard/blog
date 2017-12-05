@@ -35,7 +35,9 @@
   <div class="flex">
     <div class="w-1/6 md:w-1/5 xl:w-1/4"></div>
     <div class="w-5/6 md:w-3/5 xl:w-1/2 font-sans text-lg text-grey-darkest leading-normal">
-      <h1 class="text-center py-8 text-5xl">Relying on 3rd party charts is risky</h1>
+      <h1 class="text-center py-8 text-5xl">
+        Don’t stake your reputation on a stranger’s API
+      </h1>
 
       <div class="mx-auto text-center">
         <img src="cover.jpg" alt="Book cover" class="w-1/2">
@@ -43,24 +45,7 @@
 
       <!-- PAIN -->
       <p class="pb-4 pt-8">
-        3rd party chart libraries can make for a great demo, but getting them to production is a different story.
-      </p>
-      <p class="pb-4">
-        When you start a new project, you don&#39;t know <em>exactly</em> what you&#39;re going to build. You might have user stories, or wireframes, or even a detailed spec, but if you&#39;re doing it right, things will evolve. You&#39;ll discover the data doesn&#39;t support that view, or users would be happier with a different view of things, and changes will be made.
-      </p>
-      <p class="pb-4">
-        Problem is, you don&#39;t know until it&#39;s too late that your library of choice doesn&#39;t support your latest requirement.
-      </p>
-      <p class="pb-4">
-        Uncertainty is just another word for stress.
-      </p>
-      <p class="pb-4">
-        Does that off-the-shelf library give you the APIs and styles you need to implement the vision? Anybody&#39;s guess.
-      </p>
-
-      <h3 class="pt-4 pb-2 text-grey-dark font-thin italic text-2xl">Complete creative control</h3>
-      <p class="pb-4">
-        Stop me if this sounds familiar. Your designer sends over revision #72, and they want to make some &quot;tweaks&quot; to the charts. Problem is, the tweaks they want aren&#39;t something the library exposes to you. &quot;Nobody would ever need to change <em>that</em>.&quot;
+        Stop me if this sounds familiar. Your designer sends over revision #72, and they want to make some &quot;tweaks&quot; to the charts. Sounds easy enough. Problem is, the tweaks they want aren&#39;t something your chosen library allows you to do. &quot;Nobody would ever need to change <em>that</em>.&quot;
       </p>
       <p class="pb-4">
         Uh huh.
@@ -69,19 +54,33 @@
         Now you have some decisions to make. Do you tell your boss &quot;sorry, I picked a charting library that restricts what we can and cannot implement.&quot;? That doesn&#39;t sound like it would be very good for your career.
       </p>
       <p class="pb-4">
-        At the same time, ripping out your chart library in favor of another one doesn&#39;t make sense either. Who&#39;s to say it&#39;s any better? What if it&#39;s worse?!
+        At the same time, you can't just rip out your chart library. Not this far into the project. Heck, even if you found another one that <em>looked</em> better, who&#39;s to say it actually is? What if it&#39;s worse?!
       </p>
       <p class="pb-4">
         Rock, meet hard place. Population: you.
       </p>
 
+      <h3 class="pt-4 pb-2 text-grey-dark font-thin italic text-2xl">Don't paint yourself into a corner</h3>
+      <p class="pb-4">
+        3rd party chart libraries can make for a great demo, but getting them to production is a whole different story.
+      </p>
+      <p class="pb-4">
+        When you start a new project, you don&#39;t know <em>exactly</em> what you&#39;re going to build. You might have user stories, or wireframes, or even a detailed spec, but if you&#39;re doing it right, things will evolve. You&#39;ll discover the data doesn&#39;t support that view, or users would be happier with a different layout, and changes will be made. This is normal.
+      </p>
+      <p class="pb-4">
+        Unfortunately, you won&#39;t know until it&#39;s too late that your library of choice doesn&#39;t support your new requirement.
+      </p>
+      <p class="pb-4">
+        Does that off-the-shelf library expose the APIs and styles you need to implement the vision? That's anybody&#39;s guess.
+      </p>
+
       <!-- DREAM -->
       <a name="dream"></a>
       <h2 class="pt-8 pb-1 text-3xl">
-        It doesn't have to be that stressful
+        You can and should control your own destiny
       </h2>
       <p class="pb-4">
-        You don&#39;t need to stake your reputation on a bundle of code written by a stranger.
+        Don&#39;t stake your reputation on a bundle of code written by a stranger.
       </p>
 
       <h3 class="pt-4 pb-2 text-grey-dark font-thin italic text-2xl">
@@ -98,14 +97,14 @@
         Turnkey responsive design
       </h3>
       <p class="pb-4">
-        What if you could make <em>every single chart</em> responsive with one small utility function? From a not-so-new smartphone to a massive 5K monitor and everything in between, SVG graphics will stay crisp and clear if built correctly.
+        What if you could make <em>every single chart</em> responsive with one small utility function? From a not-so-new smartphone to a massive 5K monitor and everything in between, SVG graphics will stay crisp and clear when built correctly.
       </p>
 
       <h3 class="pt-4 pb-2 text-grey-dark font-thin italic text-2xl">
         Performant by default with room to grow
       </h3>
       <p class="pb-4">
-        Thanks to its maturity SVG is performant by default. Out of the box, you could use it to draw (and animate!) hundreds if not thousands of elements without issue.
+        Thanks to its maturity SVG is speedy by default. Out of the box, you could use it to draw (and animate!) hundreds if not thousands of elements without issue.
       </p>
       <p class="pb-4">
         If you do manage to bump up against the limits of SVG, D3 enables you to easily target <code>canvas</code> elements instead by changing just a small fraction of your code.
