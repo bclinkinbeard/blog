@@ -36,6 +36,21 @@
         margin-left: calc(-1 * ((80vw - 100%) / 2));
       }
     }
+
+    .videoWrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      padding-top: 25px;
+      height: 0;
+    }
+
+    .videoWrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   </style>
   <!-- Piwik -->
   <script type="text/javascript">
@@ -176,7 +191,13 @@
         The Complete Bundle includes <em>Build Interactive JavaScript Charts with D3 v4</em>, an in-depth video course with <strong>2.5 hours of instruction spread across 26 bite-sized lessons.</strong> This course was previously only available to Egghead PRO members.
       </p>
       <p class="pb-4">
-        When you purchase The Complete Bundle you also receive 3 months access to group Q+A office hours. Bring your questions and code samples and we&#39;ll sort them out together!
+        Want to see a sample? Check this out and remember <strong>the course includes 25 more lessons just like this.</strong>
+      </p>
+      <div class="videoWrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/aJy2Zse7vFI" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+      </div>
+      <p class="pt-8 pb-4">
+        The Complete Bundle also includes 3 months access to group Q+A office hours. Bring your questions and code samples and we&#39;ll sort them out together!
       </p>
 
       <h3 class="pt-4 pb-2 text-grey-dark font-thin italic text-2xl">
