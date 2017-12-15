@@ -59,7 +59,7 @@ metalsmith(__dirname)
     files: 'css/styles.css'
   }))
   .use(redirect({
-    '/': '/d3svg',
+    '/': '/d3in5days',
     '/blog': '/posts',
     '/posts/build-your-first-column-chart-with-d3-v4/': '/d3in5days',
   }))
