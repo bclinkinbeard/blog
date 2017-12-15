@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:description" content="A concise, practical lesson delivered via email for five consecutive weekdays. Each lesson is short, to the point, and packed with information." />
+  <meta name="twitter:title" content="Learn D3.js in 5 Days - d3in5days.com" />
+  <meta name="twitter:site" content="@bclinkinbeard" />
+  <meta name="twitter:image" content="https://i.imgur.com/Lwx4YqC.png" />
+  <meta name="twitter:creator" content="@bclinkinbeard" />
+  <title>Learn D3.js in 5 Days</title>
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    h2 {
+      color: white;
+      margin-top: 0;
+      margin-bottom: 3rem;
+    }
+
+    .landing {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: url("bg.jpg") center 0 no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    form {
+      width: 45vw;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+    }
+
+    input[type="email"] {
+      flex: 1.25;
+      max-width: 500px;
+      margin-right: 0.3rem;
+      height: 2rem;
+      padding: 0.35rem 0.5rem 0.5rem 0.5rem;
+      font-size: 1.2rem;
+      border-radius: 6px;
+      border: none;
+    }
+
+    input[type="submit"] {
+      background-image: linear-gradient(to bottom, #5cb85c 0, #419641 100%);
+      background-repeat: repeat-x;
+      border-color: #3e8f3e;
+      color: #fff;
+      background-color: #5cb85c;
+    }
+
+    .disclaimer {
+      width: 45vw;
+      display: flex;
+      justify-content: center;
+      padding-top: 0.3rem;
+      padding-bottom: 20rem;
+      color: gray;
+    }
+  </style>
+  <style>
+    .cover {
+      background-size: cover !important;
+    }
+
+    .dt {
+      display: table;
+    }
+
+    .dtc {
+      display: table-cell;
+    }
+
+    .i {
+      font-style: italic;
+    }
+
+    .fs-normal {
+      font-style: normal;
+    }
+
+    .fw1 {
+      font-weight: 100;
+    }
+
+    .vh-100 {
+      height: 100vh;
+    }
+
+    .tracked {
+      letter-spacing: .1em;
+    }
+
+    .lh-title {
+      line-height: 1.25;
+    }
+
+    .lh-copy {
+      line-height: 1.5;
+    }
+
+    .w-100 {
+      width: 100%;
+    }
+
+    .white-70 {
+      color: rgba(255, 255, 255, .7);
+    }
+
+    .white-60 {
+      color: rgba(255, 255, 255, .6);
+    }
+
+    .white {
+      color: #fff;
+    }
+
+    .bg-dark-gray {
+      background-color: #333;
+    }
+
+    .pv5 {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .ph0 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .ph2 {
+      padding-left: .5rem;
+      padding-right: .5rem;
+    }
+
+    .mb2 {
+      margin-bottom: .5rem;
+    }
+
+    .mh0 {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .tc {
+      text-align: center;
+    }
+
+    .ttu {
+      text-transform: uppercase;
+    }
+
+    .f1 {
+      font-size: 3rem;
+    }
+
+    .f4 {
+      font-size: 1.25rem;
+    }
+
+    .f5 {
+      font-size: 1rem;
+    }
+
+    .f6 {
+      font-size: .875rem;
+    }
+
+    .measure {
+      max-width: 30em;
+    }
+
+    .measure-wide {
+      max-width: 34em;
+    }
+
+    .center {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .v-mid {
+      vertical-align: middle;
+    }
+
+    @media screen and (min-width: 60em) {
+      .f-headline-l {
+        font-size: 6rem;
+      }
+    }
+
+    .ba {
+      border-style: solid;
+      border-width: 1px;
+    }
+
+    .bn {
+      border-style: none;
+      border-width: 0;
+    }
+
+    .b--black-10 {
+      border-color: rgba(0, 0, 0, .1);
+    }
+
+    .cf:before,
+    .cf:after {
+      content: " ";
+      display: table;
+    }
+
+    .cf:after {
+      clear: both;
+    }
+
+    .cf {
+      *zoom: 1;
+    }
+
+    .fl {
+      float: left;
+      _display: inline;
+    }
+
+    .input-reset {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+
+    .button-reset::-moz-focus-inner,
+    .input-reset::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+
+    .lh-solid {
+      line-height: 1;
+    }
+
+    .mw7 {
+      max-width: 48rem;
+    }
+
+    .w-100 {
+      width: 100%;
+    }
+
+    .black-80 {
+      color: rgba(0, 0, 0, .8);
+    }
+
+    .white {
+      color: #fff;
+    }
+
+    .bg-black-70 {
+      background-color: rgba(0, 0, 0, .7);
+    }
+
+    .bg-white {
+      background-color: #fff;
+    }
+
+    .hover-bg-black:hover {
+      background-color: #000;
+    }
+
+    .hover-bg-black:focus {
+      background-color: #000;
+    }
+
+    .pa0 {
+      padding: 0;
+    }
+
+    .pa3 {
+      padding: 1rem;
+    }
+
+    .pa4 {
+      padding: 2rem;
+    }
+
+    .pv3 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .ma0 {
+      margin: 0;
+    }
+
+    .mb3 {
+      margin-bottom: 1rem;
+    }
+
+    .tc {
+      text-align: center;
+    }
+
+    .f5 {
+      font-size: 1rem;
+    }
+
+    .f6 {
+      font-size: .875rem;
+    }
+
+    .center {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .clip {
+      position: fixed !important;
+      _position: absolute !important;
+      clip: rect(1px 1px 1px 1px);
+      clip: rect(1px, 1px, 1px, 1px);
+    }
+
+    .pointer:hover {
+      cursor: pointer;
+    }
+
+    .bg-animate,
+    .bg-animate:hover,
+    .bg-animate:focus {
+      transition: background-color .15s ease-in-out;
+    }
+
+    @media screen and (min-width: 30em) {
+      .br2-ns {
+        border-radius: .25rem;
+      }
+
+      .br--right-ns {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      .br--left-ns {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .f4-ns {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media screen and (min-width: 30em) and (max-width: 60em) {
+      .w-25-m {
+        width: 25%;
+      }
+
+      .w-75-m {
+        width: 75%;
+      }
+    }
+
+    @media screen and (min-width: 60em) {
+      .w-20-l {
+        width: 20%;
+      }
+
+      .w-80-l {
+        width: 80%;
+      }
+
+      .pa4-l {
+        padding: 2rem;
+      }
+
+      .f5-l {
+        font-size: 1rem;
+      }
+    }
+  </style>
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function () {
+      var u = "//bclinkinbeard.innocraft.cloud/";
+      _paq.push(['setTrackerUrl', u + 'piwik.php']);
+      _paq.push(['setSiteId', '1']);
+      var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+      g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'piwik.js'; s.parentNode.insertBefore(g, s);
+    })();
+  </script>
+  <!-- End Piwik Code -->
+</head>
+
+<body>
+  <div class="vh-50 vh-75-ns dt w-100 tc bg-dark-gray white cover" style="background:url(../bg.jpg) no-repeat center;">
+    <div class="dtc pt4">
+      <div class="flex items-center justify-center">
+        <img src="logo.png" class="w-70 w-50-ns w-33-l" alt="Syntax logo">
+      </div>
+      <h1 class="f1 f2-ns f-headline-l fw1 white ma0 pt1 ph3 pt0-ns pb3">Learn D3.js in 5 Days</h1>
+      <h2 class="f3 fw1 white-80">Daily lessons delivered straight to your inbox</h2>
+      <div id="form-container" class="pa4-ns pb4">
+        <form id="d35d-landing-form" class="w-100 center" action="https://www.getdrip.com/forms/64356965/submissions" method="post"
+          data-drip-embedded-form="64356965">
+          <fieldset class="cf bn ma0 pa0">
+            <div class="mw6 center">
+              <input class="f6 f5-l input-reset bn fl black-80 bg-white pa3 lh-solid w-70-l w-100 br2" placeholder="Your Email Address"
+                type="text" name="fields[email]" value="" id="email-address">
+              <input class="f6 mv2 f5-l button-reset fl pv3 tc bn bg-animate bg-black-70 hover-bg-black white pointer w-30-l w-100 br2"
+                type="submit" value="Send Me Free Lessons!">
+              <input type="hidden" name="tags[]" value="from-syntax" />
+            </div>
+          </fieldset>
+        </form>
+        <span class="f6 white-40">No spam, just content.</span>
+      </div>
+    </div>
+  </div>
+  <div class="center measure-wide f5 lh-copy pt3 ph4 ph0-l">
+    <h1 class="lh-title tc mb0">What you'll receive</h1>
+    <div class="flex flex-column pv2 f4-ns">
+      <p>A concise, practical lesson delivered via email for five consecutive weekdays. Each lesson is short and to the point (around 1000 words) and packed with information. The lessons provide strong foundational knowledge of core D3 concepts, preparing you for further exploration and mastery.</p>
+    </div>
+  </div>
+  <div class="center measure-wide f5 lh-copy ph4 ph0-l">
+    <h1 class="lh-title tc mb0 dn db-ns">Want the whole course now?</h1>
+    <h1 class="lh-title tc mb0 dn-ns">Hate waiting?</h1>
+    <div class="flex flex-column items-center pv2 f4-ns">
+      <p>You can get all the lessons immediately, plus a book and 20 extra CodePen examples in <a href="http://d3svg.com">D3 + SVG: How to Create Flawless Charts for Any Screen</a>.</p>
+      <p>A book that picks up where D3 in 5 Days finishes, you also get the full D3 in 5 Days course as a single PDF. You could probably read them both in an afternoon. You can even get a 2.5 hour video course, <em>Build Interactive JavaScript Charts with D3 v4</em>. <a href="http://d3svg.com">Click here to learn more!</a></p>
+    </div>
+  </div>
+  <div class="center measure-wide f5 lh-copy ph4 ph0-l">
+    <h1 class="lh-title tc mb0 dn db-ns">Who is the intended audience?</h1>
+    <h1 class="lh-title tc mb0 dn-ns">Who is this for?</h1>
+    <div class="flex flex-column items-center pv2 f4-ns">
+      <p>Absolutely no D3 experience is necessary, but the lessons do assume a basic understanding of HTML, CSS, and JavaScript. If you're a web developer looking to add data visualization to your skillset this course is perfect for you!</p>
+    </div>
+  </div>
+  <div class="center measure-wide f5 lh-copy ph4 ph0-l">
+    <h1 class="lh-title tc pv3 dn db-ns">What subscribers are saying</h1>
+    <h1 class="lh-title tc pv3 dn-ns">What people think</h1>
+    <div class="flex flex-column items-center flex-row-ns items-start-ns f4-ns pb4">
+      <img src="../../headshots/pawel.jpg" width="120" height="120" class="fl-ns br-100 mb2 ba b--black-10" />
+      <div class="pl3">
+        <blockquote class="ma0 i dark-gray">That was probably the best text introducing D3.js I have ever read. This not so easy library was described really excellent, you have a gift of showing what is really important.</blockquote>
+        <p>&#8213; Paweł Pieczonka</p>
+      </div>
+    </div>
+    <div class="flex flex-column items-center flex-row-ns items-start-ns f4-ns pb4">
+      <img src="../../headshots/josh.jpg" width="120" height="120" class="fl-ns br-100 mb2 ba b--black-10" />
+      <div class="pl3">
+        <blockquote class="ma0 i dark-gray">Just wanted to say thank you for the 5-day course. I've been meaning to get into D3 for ages and it's always tomorrow. Your course did the trick.</blockquote>
+        <p>&#8213; <a href="https://twitter.com/joshpitzalis" class="dark-blue link underline hover-bg-lightest-blue">Josh Pitzalis</a></p>
+      </div>
+    </div>
+    <div class="flex flex-column items-center flex-row-ns items-start-ns f4-ns pb4">
+      <img src="../../headshots/kai.jpg" width="120" height="120" class="fl-ns br-100 mb2 ba b--black-10" />
+      <div class="pl3">
+        <blockquote class="ma0 i dark-gray">This is a great set of tips for getting started with D3! The daily lessons encourage persistence and really prepare you to dive deeper into the library.</blockquote>
+        <p>&#8213; <a href="https://bl.ocks.org/syntagmatic" class="dark-blue link underline hover-bg-lightest-blue">Kai Chang</a>, Data Visualization Technologist, Stamen</p>
+      </div>
+    </div>
+    <div class="flex flex-column items-center flex-row-ns items-start-ns f4-ns pb4">
+      <img src="../../headshots/matthew.jpg" width="120" height="120" class="fl-ns br-100 mb2 ba b--black-10" />
+      <div class="pl3">
+        <blockquote class="ma0 i dark-gray">Ben's D3 in 5 Days is a great introduction to the fundamentals of D3 and building data visualization for the web. The digestible lessons help to demystify common D3 patterns and build a solid foundation for learning more.</blockquote>
+        <p>&#8213; <a href="http://www.mathisonian.com/" class="dark-blue link underline hover-bg-lightest-blue">Matthew Conlen</a>, Data Visualization, FiveThirtyEight</p>
+      </div>
+    </div>
+    <div class="flex flex-column items-center flex-row-ns items-start-ns f4-ns pb4">
+      <img src="../../headshots/loren.jpg" width="120" height="120" class="fl-ns br-100 mb2 ba b--black-10" />
+      <div class="pl3">
+        <blockquote class="ma0 i dark-gray">If you want to learn D3, I cannot recommend Ben&apos;s newsletter highly enough. Sign up!</blockquote>
+        <p>&#8213; <a href="https://lorenstewart.me" class="dark-blue link underline hover-bg-lightest-blue">Loren Stewart</a></p>
+      </div>
+    </div>
+    <div class="flex flex-column items-center flex-row-ns items-start-ns f4-ns pb4">
+      <img src="../../headshots/andrew.jpg" width="120" height="120" class="fl-ns br-100 mb2 ba b--black-10" />
+      <div class="pl3">
+        <blockquote class="ma0 i dark-gray">I really enjoyed this course. Each day’s email was just the right amount of content and the conversational format with inline examples is great.</blockquote>
+        <p>&#8213; <a href="https://www.linkedin.com/in/andrewgscheidle/" class="dark-blue link underline hover-bg-lightest-blue">Andrew Gscheidle</a></p>
+      </div>
+    </div>
+    <div class="flex flex-column items-center flex-row-ns items-start-ns f4-ns pb4">
+      <img src="../../headshots/will.jpg" width="120" height="120" class="fl-ns br-100 mb2 ba b--black-10" />
+      <div class="pl3">
+        <blockquote class="ma0 i dark-gray">I've messed around with D3 in the past, and this is the first time it's really &quot;clicked&quot;. The emails teed up the next day's content and had me looking forward to it.</blockquote>
+        <p>&#8213; <a href="http://willbutton.co/" class="dark-blue link underline hover-bg-lightest-blue">Will Button</a></p>
+      </div>
+    </div>
+    <div class="flex flex-column items-center flex-row-ns items-start-ns f4-ns pb4">
+      <img src="../../headshots/jonathan.jpg" width="120" height="120" class="fl-ns br-100 mb2 ba b--black-10" />
+      <div class="pl3">
+        <blockquote class="ma0 i dark-gray">Ben's five-day D3 email course is so clear and well-written that I accidentally learned D3 just from proof reading it for him. Now I'm looking for places to use it in my own work!</blockquote>
+        <p>&#8213; <a href="http://expensiveproblem.com" class="dark-blue link underline hover-bg-lightest-blue">Jonathan Stark</a></p>
+      </div>
+    </div>
+    <div class="flex flex-column items-center flex-row-ns items-start-ns f4-ns pb4">
+      <img src="../../headshots/lukas.jpg" width="120" height="120" class="fl-ns br-100 mb2 ba b--black-10" />
+      <div class="pl3">
+        <blockquote class="ma0 i dark-gray">Being a great teacher requires a deep sense of empathy to meet a new student where they are. For years, I have admired Ben's commitment to helping students cross the chasm between awareness and doing, and this mini-course is just another example of why he is one of the best in the space.</blockquote>
+        <p>&#8213; Lukas Ruebbelke</p>
+      </div>
+    </div>
+    <div class="flex flex-column items-center flex-row-ns items-start-ns f4-ns pb4">
+      <img src="../../headshots/taylor.jpg" width="120" height="120" class="fl-ns br-100 mb2 ba b--black-10" />
+      <div class="pl3">
+        <blockquote class="ma0 i dark-gray">Ben's mini-course provides a great foundation for data viz. I'm not afraid of D3 anymore!</blockquote>
+        <p>&#8213; Taylor Bell</p>
+      </div>
+    </div>
+    <div class="flex flex-column items-center flex-row-ns items-start-ns f4-ns pb4">
+      <img src="../../headshots/vanslaars.jpg" width="120" height="120" class="fl-ns br-100 mb2 ba b--black-10" />
+      <div class="pl3">
+        <blockquote class="ma0 i dark-gray">Learning D3 on your own is intimidating but Ben's course was exactly what I needed to get started. The emails built an incredible foundation with D3 and I'm now comfortable with the core concepts. I'm ready to start branching out and learning the API at a deeper level!</blockquote>
+        <p>&#8213; <a href="https://vanslaars.io/" class="dark-blue link underline hover-bg-lightest-blue">Andy Van Slaars</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="bg-black-10">
+    <div class="center measure-wide f5 lh-copy pt3 ph4 ph0-l">
+      <h1 class="lh-title tc mb0">Who created this?</h1>
+      <div class="flex flex-column items-center pv2 f4-ns">
+        <img src="../../headshots/ben.jpg" width="120" height="120" class="mv3 br-100" />
+        <div class="pb5">
+          <p>Ben Clinkinbeard is a web developer with nearly two decades of experience focused on D3, React, Node, and ES6+. In addition to professional consulting, Ben shares his knowledge through <a href="https://benclinkinbeard.com/posts/" class="dark-blue link underline hover-bg-lightest-blue">blogging</a>, conference presentations, and <a href="https://egghead.io/instructors/ben-clinkinbeard" class="dark-blue link underline hover-bg-lightest-blue">video tutorials</a>.</p>
+          <p>
+            Since 2014 <span class="bg-lightest-blue">more than 25,000 developers have spent over 18,000 hours watching his video lessons.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    if (location.search.startsWith('?e=')) {
+      document.getElementById('email-address').value = location.search.substr(3);
+    }
+    if (location.search.startsWith('?confirmed')) {
+      var fc = document.getElementById('form-container');
+      fc.parentNode.removeChild(fc);
+    }
+  </script>
+  <!-- Drip -->
+  <script type="text/javascript">
+    var _dcq = _dcq || [];
+    var _dcs = _dcs || {};
+    _dcs.account = '4436187';
+
+    (function() {
+      var dc = document.createElement('script');
+      dc.type = 'text/javascript'; dc.async = true;
+      dc.src = '//tag.getdrip.com/4436187.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(dc, s);
+    })();
+  </script>
+</body>
+
+</html>
