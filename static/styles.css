@@ -624,6 +624,40 @@ p {
   z-index: -1;
 }
 
+.hero_syntax {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  text-align: center;
+  color: #ffffff;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  width: 100vw;
+  margin: 0;
+}
+
+.hero_syntax,
+.hero_syntax .hero_bg {
+  height: 90vh;
+}
+
+.hero_syntax .hero_content {
+  margin-top: 6rem;
+}
+
+@media (min-width: 768px) {
+  .hero_syntax .hero_content {
+    margin-top: 12rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero_syntax .hero_content {
+    margin-top: 11.5rem;
+  }
+}
+
 .hero_bg_image {
   position: absolute;
   width: 100%;
